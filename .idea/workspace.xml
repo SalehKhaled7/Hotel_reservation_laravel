@@ -10,7 +10,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="integrating bootstrap template into laravel project" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="update 1.0">
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/_chat.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/_footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/_header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/_right_sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/_sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/dashboard/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard_base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GithubPullRequestsUISettings">
     <option name="hiddenUrls">
@@ -160,9 +171,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../php/php_small_projects" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -191,7 +202,13 @@
       <workItem from="1606403475034" duration="2033000" />
       <workItem from="1606463832451" duration="9025000" />
       <workItem from="1606473300450" duration="566000" />
-      <workItem from="1606473877870" duration="300000" />
+      <workItem from="1606473877870" duration="1980000" />
+      <workItem from="1606743860588" duration="159000" />
+      <workItem from="1606904966205" duration="141000" />
+      <workItem from="1606922828606" duration="5152000" />
+      <workItem from="1607019369814" duration="858000" />
+      <workItem from="1608227972149" duration="686000" />
+      <workItem from="1608561451901" duration="7111000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -214,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606473445974</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update 1.0">
+      <created>1606474868455</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1606474868455</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,13 +261,14 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="integrating bootstrap template into laravel project" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrating bootstrap template into laravel project" />
+    <MESSAGE value="update 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 1.0" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1606472949280">
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1607019545512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606472949280" />
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1607019545512" />
     <state x="612" y="362" width="604" height="205" key="Github.ShareDialog" timestamp="1606473260440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -264,22 +289,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605637231658" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1606469461713">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1608566155225">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606469461713" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1606473143186">
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608566155225" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1606905006129">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606473143186" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606474150871">
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1606474951116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606474150871" />
-    <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606473932129">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606474951116" />
+    <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606474735909">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606473932129" />
+    <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606474735909" />
     <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606471032384">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

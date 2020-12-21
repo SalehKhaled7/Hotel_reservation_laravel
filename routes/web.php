@@ -30,3 +30,6 @@ Route::get('/test/{id}',[HomeController::class,'test'])->where('id','[0-9]+')->n
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//admin routes
+Route::get('/admin',[App\Http\Controllers\Admin\HomeController::class,'index'])->name('dashboard'); // call index function inside homeController
