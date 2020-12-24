@@ -32,4 +32,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //admin routes
-Route::get('/admin',[App\Http\Controllers\Admin\HomeController::class,'index'])->name('dashboard'); // call index function inside homeController
+Route::get('/admin',[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin')->middleware('auth'); // dashboard , middleware: the page can't be reached unless the user is auth
+
+Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login'); // login
+Route::post('/admin/loginAuth',[HomeController::class,'loginAuth'])->name('admin_loginAuth'); // login check , use post for data sending
+Route::get('/admin/logout',[HomeController::class,'logout'])->name('admin_logout'); // logout

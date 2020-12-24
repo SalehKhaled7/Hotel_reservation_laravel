@@ -42,14 +42,14 @@
 
 
 
-    @include('dashboard._header')
+    @include('admin._header')
     <div class="page-wrap">
-        @include('dashboard._sidebar')
+        @include('admin._sidebar')
         @section('content')
         @show
-        @include('dashboard._right_sidebar')
-        @include('dashboard._chat')
-        @include('dashboard._footer')
+        @include('admin._right_sidebar')
+        @include('admin._chat')
+        @include('admin._footer')
 
     </div>
 
