@@ -15,7 +15,10 @@
             <nav id="main-menu-navigation" class="navigation-main">
                 <div class="nav-lavel">Navigation</div>
                 <div class="nav-item active">
-                    <a href="index.html"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                    <a href="{{ route('admin') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                </div>
+                <div class="nav-item">
+                    <a href="{{route('admin_category')}}"><i class="ik ik-menu"></i><span>Categories</span></a>
                 </div>
                 <div class="nav-item">
                     <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>

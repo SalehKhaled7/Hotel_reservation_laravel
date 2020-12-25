@@ -163,6 +163,8 @@
 <script src="{{asset('assets')}}/dashboard/js/widgets.js"></script>
 <script src="{{asset('assets')}}/dashboard/js/charts.js"></script>
 <script src="{{asset('assets')}}/dashboard/dist/js/theme.min.js"></script>
+
+
 @yield('footerJs')
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
