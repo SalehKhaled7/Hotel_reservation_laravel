@@ -1,5 +1,5 @@
 @extends('layouts.admin_base')
-@section('title','add new category')
+@section('title','category update')
 @section('CSS')
     <link rel="stylesheet" href="{{asset('assets')}}/dashboard/plugins/select2/dist/css/select2.min.css">
 @endsection
@@ -12,7 +12,7 @@
                         <div class="page-header-title">
                             <i class="ik ik-box bg-blue"></i>
                             <div class="d-inline">
-                                <h5>Add new category</h5>
+                                <h5>updating "{{ $data->title }}" category</h5>
                                 <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                                     <a href="{{route('admin_category')}}">Categories</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('admin_category_add')}}">add</a>
+                                    <a href="{{ route('admin_category_edit',['id'=>$data->id ]) }}">add</a>
                                 </li>
                             </ol>
                         </nav>
@@ -37,7 +37,7 @@
             <div class="col-md-12">
                 <div class="card" style="min-height: 484px;">
                     <div class="card-body">
-                        <form class="forms-sample" action="{{route('admin_category_create')}}" method="post">
+                        <form class="forms-sample" action="{{ route('admin_category_update',['id'=>$data->id]) }}" method="post">
                             @csrf
                             <div class="form-group row">
 
@@ -45,9 +45,9 @@
                                 <div class="col-sm-9">
 
                                         <select class="form-control select2" name="parent_id">
-                                            <option value="0">Main category</option>
+                                            <option value="0"> Main category</option>
                                             @foreach($dataList as $rs)
-                                            <option value="{{$rs-> id}}">{{$rs-> title}}</option>
+                                            <option value="{{$rs-> id}}" @if($rs->id == $data->parent_id)  selected="selected" @endif >{{$rs-> title}}</option>
                                             @endforeach
 
                                         </select>
@@ -57,25 +57,25 @@
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Title</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="title" placeholder="title">
+                                    <input type="text" class="form-control" name="title" placeholder="title" value="{{$data->title}}" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Description</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="description" placeholder="description">
+                                    <input type="text" class="form-control" name="description" placeholder="description" value="{{$data->description}}" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Keywords</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="keywords" placeholder="keywords">
+                                    <input type="text" class="form-control" name="keywords" placeholder="keywords" value="{{$data->keywords}}" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Slug</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="slug" placeholder="slug">
+                                    <input type="text" class="form-control" name="slug" placeholder="slug" value="{{$data->slug}}" >
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -84,6 +84,7 @@
                                 <div class="col-sm-9">
 
                                     <select class="form-control select2" name="status">
+                                        <option value="true" selected >{{$data->status}}</option>
                                         <option value="true">true</option>
                                         <option value="false">false</option>
                                     </select>
@@ -91,7 +92,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary mr-2">Add</button>
+                            <button type="submit" class="btn btn-primary mr-2">Update</button>
                             <button class="btn btn-light">Cancel</button>
                         </form>
                     </div>

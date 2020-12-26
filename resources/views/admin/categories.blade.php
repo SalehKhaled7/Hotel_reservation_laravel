@@ -74,7 +74,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="#!"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
+                                        <a href="{{route('admin_category_edit',['id'=>$rs->id])}}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
                                         <a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('{{$rs->title}} will be deleted permanently continue !')"><i class="ik ik-trash-2 f-16 text-red"></i></a>
                                     </td>
                                 </tr>
