@@ -6,13 +6,18 @@
             <!-- content header start -->
             <div class="page-header">
                 <div class="row align-items-end">
-                    <div class="col-lg-8">
+                    <div class="col-lg-4">
                         <div class="page-header-title">
                             <i class="ik ik-box bg-blue"></i>
                             <div class="d-inline">
                                 <h5>Categories</h5>
                                 <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" >
+                        <div class="d-inline">
+                       <a href="{{route('admin_category_add')}}"><button  type="button" class="btn btn-warning">add new</button></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -62,12 +67,15 @@
                                     <td>{{$rs-> id}}</td>
                                     <td>{{$rs-> title}}</td>
                                     <td><img src="{{asset('assets')}}/dashboard//img/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
-                                    <td>
+                                    <td>@if($rs -> status == 'true')
                                         <div class="p-status bg-green"></div>
+                                        @else
+                                            <div class="p-status bg-red"></div>
+                                        @endif
                                     </td>
                                     <td>
                                         <a href="#!"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
-                                        <a href="#!"><i class="ik ik-trash-2 f-16 text-red"></i></a>
+                                        <a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('{{$rs->title}} will be deleted permanently continue !')"><i class="ik ik-trash-2 f-16 text-red"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
@@ -85,5 +93,5 @@
 
 @endsection
 @section('footerJs')
-    <script src="{{asset('assets')}}/dashboard/js/datatables.js"></script>
+
 @endsection
