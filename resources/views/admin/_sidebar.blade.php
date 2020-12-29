@@ -21,6 +21,9 @@
                     <a href="{{route('admin_category')}}"><i class="ik ik-menu"></i><span>Categories</span></a>
                 </div>
                 <div class="nav-item">
+                    <a href="{{route('hotels')}}"><i class="ik ik-menu"></i><span>Hotels</span></a>
+                </div>
+                <div class="nav-item">
                     <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
                 </div>
                 <div class="nav-item has-sub">
