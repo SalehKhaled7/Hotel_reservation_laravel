@@ -8,6 +8,7 @@ use App\Models\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class HotelController extends Controller
 {
@@ -45,23 +46,26 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        DB::table('hotels')->insert([
-            'category_id' => $request->input('category_id'),
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
-            'keywords' => $request->input('keywords'),
-            'slug' => $request->input('slug'),
-            'details' => $request->input('details'),
-            'star' => $request->input('star'),
-            'phone' => $request->input('phone'),
-            'fax' => $request->input('fax'),
-            'email' => $request->input('email'),
-            'city' => $request->input('city'),
-            'country' => $request->input('country'),
-            'address' => $request->input('address'),
-            'user_id' => Auth::id(),
-            'status' => $request->input('status')
-        ]);
+        $data= new Hotel;
+        $data->category_id = $request->input('category_id');
+        $data->title = $request->input('title');
+        $data->image = Storage::putFile('images',$request->file('image')); //file upload
+        $data->description =$request->input('description');
+        $data->keywords = $request->input('keywords');
+        $data->slug = $request->input('slug');
+        $data->details = $request->input('details');
+        $data->star = $request->input('star');
+        $data->phone = $request->input('phone');
+        $data->fax = $request->input('fax');
+        $data->email = $request->input('email');
+        $data->city = $request->input('city');
+        $data->country= $request->input('country');
+        $data->address = $request->input('address');
+        $data->user_id = Auth::id();
+        $data->status = $request->input('status');
+
+        $data->save();
+
         return redirect()->route('hotels');
     }
 
@@ -103,6 +107,7 @@ class HotelController extends Controller
 
         $data->category_id = $request->input('category_id');
         $data->title = $request->input('title');
+        $data->image = Storage::putFile('images',$request->file('image'));
         $data->description =$request->input('description');
         $data->keywords = $request->input('keywords');
         $data->slug = $request->input('slug');

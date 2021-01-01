@@ -41,7 +41,7 @@
             <div class="col-md-12">
                 <div class="card" style="min-height: 484px;">
                     <div class="card-body">
-                        <form class="forms-sample" action="{{route('admin_hotel_store')}}" method="post">
+                        <form class="forms-sample" action="{{route('admin_hotel_store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
 
@@ -61,6 +61,12 @@
                                 <label  class="col-sm-3 col-form-label">Title</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="title" placeholder="title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label  class="col-sm-3 col-form-label">Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="image">
                                 </div>
                             </div>
                             <div class="form-group row">

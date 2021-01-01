@@ -56,6 +56,19 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('delete/{id}',[App\Http\Controllers\Admin\HotelController::class,'destroy'])->name('admin_hotel_delete');
         Route::get('show',[App\Http\Controllers\Admin\HotelController::class,'show'])->name('admin_hotel_show');
 
+        //room routes
+        Route::prefix('{hotel_id}/room')->group(function (){
+
+            Route::get('/',[App\Http\Controllers\Admin\RoomController::class,'index'])->name('rooms');
+            Route::get('create',[App\Http\Controllers\Admin\RoomController::class,'create'])->name('admin_room_add');
+            Route::post('store',[App\Http\Controllers\Admin\RoomController::class,'store'])->name('admin_room_store');
+            Route::get('edit/{id}',[App\Http\Controllers\Admin\RoomController::class,'edit'])->name('admin_room_edit');
+            Route::post('update/{id}',[App\Http\Controllers\Admin\RoomController::class,'update'])->name('admin_room_update');
+            Route::get('delete/{id}',[App\Http\Controllers\Admin\RoomController::class,'destroy'])->name('admin_room_delete');
+            Route::get('show',[App\Http\Controllers\Admin\RoomController::class,'show'])->name('admin_room_show');
+
+        });
+
     });
 
 });
