@@ -1,5 +1,5 @@
 @extends('layouts.admin_base')
-@section('title','add new hotel')
+@section('title','add new room')
 @section('CSS')
     <link rel="stylesheet" href="{{asset('assets')}}/dashboard/plugins/select2/dist/css/select2.min.css">
 @endsection
@@ -16,8 +16,8 @@
                         <div class="page-header-title">
                             <i class="ik ik-box bg-blue"></i>
                             <div class="d-inline">
-                                <h5>Add new room</h5>
-                                <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                <h5>{{$hotel->title}} hotel</h5>
+                                <span>Add new room</span>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,10 @@
                                     <a href="{{route('hotels')}}">Hotels</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('admin_hotel_add')}}">add</a>
+                                    <a href="{{route('rooms',['hotel_id'=>$hotel->id])}}">{{$hotel->title}}</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a >add room</a>
                                 </li>
                             </ol>
                         </nav>
@@ -41,22 +44,8 @@
             <div class="col-md-12">
                 <div class="card" style="min-height: 484px;">
                     <div class="card-body">
-                        <form class="forms-sample" action="{{route('admin_hotel_store')}}" method="post" enctype="multipart/form-data">
+                        <form class="forms-sample" action="{{route('admin_room_store',['hotel_id'=>$hotel->id])}}" method="post" enctype="multipart/form-data" >
                             @csrf
-                            <div class="form-group row">
-
-                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Category</label>
-                                <div class="col-sm-9">
-
-                                        <select class="form-control select2" name="category_id">
-                                            @foreach($dataList as $rs)
-                                            <option value="{{$rs-> id}}">{{$rs-> title}}</option>
-                                            @endforeach
-
-                                        </select>
-
-                                </div>
-                            </div>
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Title</label>
                                 <div class="col-sm-9">
@@ -64,9 +53,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Image</label>
+                                <label  class="col-sm-3 col-form-label">Type</label>
                                 <div class="col-sm-9">
-                                    <input type="file" class="form-control" name="image">
+                                    <input type="text" class="form-control" name="type" placeholder="type">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -76,15 +65,63 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Keywords</label>
+                                <label  class="col-sm-3 col-form-label">Image</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="keywords" placeholder="keywords">
+                                    <input type="file" class="form-control" name="image">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Slug</label>
+                                <label  class="col-sm-3 col-form-label">Price</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="slug" placeholder="slug">
+                                    <input type="number"  step="any" class="form-control" name="price" placeholder="price">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label  class="col-sm-3 col-form-label">Beds</label>
+                                <div class="col-sm-9">
+                                    <input type="number"  class="form-control" name="beds" placeholder="beds">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label  class="col-sm-3 col-form-label">View</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="view" placeholder="view">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+
+                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">TV</label>
+                                <div class="col-sm-9">
+
+                                    <select class="form-control select2" name="tv">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+
+                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Wifi</label>
+                                <div class="col-sm-9">
+
+                                    <select class="form-control select2" name="wifi">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+
+                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Air Conditioner</label>
+                                <div class="col-sm-9">
+
+                                    <select class="form-control select2" name="air_conditioner">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
+                                    </select>
+
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -100,63 +137,22 @@
 
                             </div>
 
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Star</label>
-                                <div class="col-sm-9">
-                                    <input type="number" min="1" max="5" class="form-control" name="star" placeholder="stars" >
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Phone</label>
-                                <div class="col-sm-9">
-                                    <input type="tel" class="form-control" name="phone" placeholder="phone" >
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Fax</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="fax" placeholder="fax" >
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Email</label>
-                                <div class="col-sm-9">
-                                    <input type="email" class="form-control" name="email" placeholder="email" >
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">City</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="city" placeholder="city" >
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Country</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="country" placeholder="country" >
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label  class="col-sm-3 col-form-label">Address</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="address" placeholder="address" >
-                                </div>
-                            </div>
+
                             <div class="form-group row">
 
-                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Status</label>
+                                <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Available</label>
                                 <div class="col-sm-9">
 
-                                    <select class="form-control select2" name="status">
-                                        <option value="true">true</option>
-                                        <option value="false">false</option>
+                                    <select class="form-control select2" name="available">
+                                        <option value="yes">yes</option>
+                                        <option value="no">no</option>
                                     </select>
 
                                 </div>
                             </div>
 
                             <button type="submit" class="btn btn-primary mr-2">Add</button>
-                            <button class="btn btn-light" href="{{route('hotels')}}">Cancel</button>
+                            <button class="btn btn-light" href="{{route('rooms',['hotel_id'=>$hotel->id])}}">Cancel</button>
                         </form>
                     </div>
                 </div>

@@ -81,7 +81,7 @@
                                         </td>
                                         <td>
                                             <a href="{{ route( 'admin_room_edit',['id'=>$rs->id ,'hotel_id'=>$hotel->id] ) }}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
-                                            <a href="{{ route( 'admin_room_delete',['id'=>$rs->id,'hotel_id'=>$hotel->id] ) }}" onclick="return confirm('{{$rs->title}} hotel will be deleted permanently continue !')"><i class="ik ik-trash-2 f-16 text-red"></i></a>
+                                            <a href="{{ route( 'admin_room_delete',['id'=>$rs->id,'hotel_id'=>$hotel->id] ) }}" onclick="return confirm('{{$rs->title}} room will be deleted permanently continue !')"><i class="ik ik-trash-2 f-16 text-red"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
