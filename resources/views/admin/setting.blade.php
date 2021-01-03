@@ -59,7 +59,7 @@
                                         <a class="nav-link" id="pills-about_us-tab" data-toggle="pill" href="#about-us" role="tab" aria-controls="pills-about_us" aria-selected="false">About us</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-about_us-tab" data-toggle="pill" href="#contact" role="tab" aria-controls="pills-about_us" aria-selected="false">Contact</a>
+                                        <a class="nav-link" id="pills-about_us-tab" data-toggle="pill" href="#contact1" role="tab" aria-controls="pills-about_us" aria-selected="false">Contact</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" id="pills-about_us-tab" data-toggle="pill" href="#references" role="tab" aria-controls="pills-about_us" aria-selected="false">References</a>
@@ -223,7 +223,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="pills-about_us-tab">
+                                    <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="pills-about_us-tab">
                                         <div class="card-body">
 
                                             <div class="form-group row">

@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Hotel extends Model
 {
     use HasFactory;
+    protected $table="hotels";
+
+    #One To Many (Inverse) , evey hotel belongs to a category
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
+
+    //every hotel has many rooms
+    public function rooms(){
+        return $this->hasMany(Room::class);
+    }
+
 }
