@@ -60,6 +60,7 @@
                                     <th>Star</th>
                                     <th>Image</th>
                                     <th>Status</th>
+                                    <th>Rooms</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -82,10 +83,11 @@
                                             <div class="p-status bg-red"></div>
                                         @endif
                                     </td>
+                                    <td><a href="{{ route( 'rooms',['hotel_id'=>$rs->id] ) }}"><i class="ik ik-book-open f-20 mr-15 text-blue"></i></a></td>
                                     <td>
-                                        <a href="{{ route( 'rooms',['hotel_id'=>$rs->id] ) }}"><i class="ik ik-edit f-16 mr-15 text-yellow"></i></a>
-                                        <a href="{{ route( 'admin_hotel_edit',['id'=>$rs->id] ) }}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
-                                        <a href="{{ route( 'admin_hotel_delete',['id'=>$rs->id] ) }}" onclick="return confirm('{{$rs->title}} hotel will be deleted permanently continue !')"><i class="ik ik-trash-2 f-16 text-red"></i></a>
+
+                                        <a href="{{ route( 'admin_hotel_edit',['id'=>$rs->id] ) }}"><i class="ik ik-edit f-20 mr-15 text-green"></i></a>
+                                        <a href="{{ route( 'admin_hotel_delete',['id'=>$rs->id] ) }}" onclick="return confirm('{{$rs->title}} hotel will be deleted permanently continue !')"><i class="ik ik-trash-2 f-20 text-red"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

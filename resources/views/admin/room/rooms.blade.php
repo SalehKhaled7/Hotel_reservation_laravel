@@ -60,9 +60,10 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Title</th>
-                                    <th>price</th>
-                                    <th>beds</th>
-                                    <th>available</th>
+                                    <th>Price</th>
+                                    <th>Beds</th>
+                                    <th>Available</th>
+                                    <th>Images</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -80,8 +81,11 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route( 'admin_room_edit',['id'=>$rs->id ,'hotel_id'=>$hotel->id] ) }}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
-                                            <a href="{{ route( 'admin_room_delete',['id'=>$rs->id,'hotel_id'=>$hotel->id] ) }}" onclick="return confirm('{{$rs->title}} room will be deleted permanently continue !')"><i class="ik ik-trash-2 f-16 text-red"></i></a>
+                                            <a href="{{ route( 'admin_image_add',['room_id'=>$rs->id,'hotel_id'=>$hotel->id] ) }}"><i class="ik ik-camera f-20 mr-15 text-yellow"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route( 'admin_room_edit',['id'=>$rs->id ,'hotel_id'=>$hotel->id] ) }}"><i class="ik ik-edit f-20 mr-15 text-green"></i></a>
+                                            <a href="{{ route( 'admin_room_delete',['id'=>$rs->id,'hotel_id'=>$hotel->id] ) }}" onclick="return confirm('{{$rs->title}} room will be deleted permanently continue !')"><i class="ik ik-trash-2 f-20 text-red"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
