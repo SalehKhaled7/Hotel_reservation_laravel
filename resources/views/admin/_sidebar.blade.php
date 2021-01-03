@@ -18,23 +18,15 @@
                     <a href="{{ route('admin') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                 </div>
                 <div class="nav-item">
-                    <a href="{{route('admin_category')}}"><i class="ik ik-menu"></i><span>Categories</span></a>
+                    <a href="{{route('admin_category')}}"><i class="ik ik-grid"></i><span>Categories</span></a>
                 </div>
                 <div class="nav-item">
-                    <a href="{{route('hotels')}}"><i class="ik ik-menu"></i><span>Hotels</span></a>
+                    <a href="{{route('hotels')}}"><i class="ik ik-home"></i><span>Hotels</span></a>
                 </div>
                 <div class="nav-item">
-                    <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
+                    <a href="{{route('admin_setting')}}"><i class="ik ik-settings"></i><span>Settings</span></a>
                 </div>
-                <div class="nav-item has-sub">
-                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Widgets</span> <span class="badge badge-danger">150+</span></a>
-                    <div class="submenu-content">
-                        <a href="pages/widgets.html" class="menu-item">Basic</a>
-                        <a href="pages/widget-statistic.html" class="menu-item">Statistic</a>
-                        <a href="pages/widget-data.html" class="menu-item">Data</a>
-                        <a href="pages/widget-chart.html" class="menu-item">Chart Widget</a>
-                    </div>
-                </div>
+
                 <div class="nav-lavel">UI Element</div>
                 <div class="nav-item has-sub">
                     <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>

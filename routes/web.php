@@ -68,7 +68,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
             Route::get('show',[App\Http\Controllers\Admin\RoomController::class,'show'])->name('admin_room_show');
 
 
-            //image routes
+            //room images routes
             Route::prefix('{room_id}/images')->group(function () {
 
                 Route::get('/', [App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
@@ -80,6 +80,14 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         });
 
     });
+
+    //setting routes
+    Route::prefix('setting')->group(function () {
+
+        Route::get('/', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
+        Route::get('update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+    });
+
 
 });
 
