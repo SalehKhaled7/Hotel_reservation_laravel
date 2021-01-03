@@ -42,14 +42,25 @@ class HotelController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
         $data= new Hotel;
         $data->category_id = $request->input('category_id');
         $data->title = $request->input('title');
-        $data->image = Storage::putFile('images',$request->file('image')); //file upload
+        //$data->image = Storage::putFile('images',$request->file('image')); //file upload
+
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename=time(). '.'.$extension;
+            $file->move('assets/images/hotels/',$filename);
+            $data->image=$filename;
+        }else{
+            $data->image = '';
+        }
+
         $data->description =$request->input('description');
         $data->keywords = $request->input('keywords');
         $data->slug = $request->input('slug');
@@ -107,7 +118,18 @@ class HotelController extends Controller
 
         $data->category_id = $request->input('category_id');
         $data->title = $request->input('title');
-        $data->image = Storage::putFile('images',$request->file('image'));
+        //$data->image = Storage::putFile('images',$request->file('image'));
+
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename=time(). '.'.$extension;
+            $file->move('assets/images/hotels/',$filename);
+            $data->image=$filename;
+        }else{
+            $data->image = '';
+        }
+
         $data->description =$request->input('description');
         $data->keywords = $request->input('keywords');
         $data->slug = $request->input('slug');

@@ -68,6 +68,8 @@
                                 <label  class="col-sm-3 col-form-label">Image</label>
                                 <div class="col-sm-9">
                                     <input type="file" class="form-control" name="image" value="{{$room->image}}">
+                                    @if($room->image) <img src="{{asset('assets')}}/images/rooms/{{$room->image}}" alt="image" class="img-fluid img-100"> @endif
+
                                 </div>
                             </div>
                             <div class="form-group row">

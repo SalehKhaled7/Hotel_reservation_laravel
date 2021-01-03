@@ -16,7 +16,7 @@
                         <div class="page-header-title">
                             <i class="ik ik-box bg-blue"></i>
                             <div class="d-inline">
-                                <h5>Add new room</h5>
+                                <h5>Add new hotel</h5>
                                 <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                             </div>
                         </div>

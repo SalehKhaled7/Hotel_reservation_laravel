@@ -75,7 +75,7 @@
                                     </td>
                                     <td>{{$rs-> title}}</td>
                                     <td>{{$rs-> star}}</td>
-                                    <td>@if($rs->image) <img src="{{ Storage::url($rs->image) }}" alt="" class="img-fluid img-20"> @endif</td>
+                                    <td>@if($rs->image) <img src="{{asset('assets')}}/images/hotels/{{$rs->image}}" alt="image" height="50px"> @endif</td>
                                     <td>@if($rs -> status == 'true')
                                         <div class="p-status bg-green"></div>
                                         @else

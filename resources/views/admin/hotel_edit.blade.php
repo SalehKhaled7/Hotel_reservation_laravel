@@ -68,7 +68,7 @@
                                 <div class="col-sm-9">
                                     <input type="file" class="form-control" name="image"  value="{{$data->image}}">
 
-                                    @if($data->image) <img src="{{ Storage::url($data->image) }}" alt="" class="img-fluid img-20"> @endif
+                                    @if($data->image) <img src="{{asset('assets')}}/images/hotels/{{$data->image}}" alt="image" class="img-fluid img-100"> @endif
                                 </div>
                             </div>
                             <div class="form-group row">

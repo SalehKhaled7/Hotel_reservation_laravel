@@ -50,6 +50,15 @@ class RoomController extends Controller
         $data->type = $request->input('type');
         $data->description =$request->input('description');
         //$data->image = Storage::putFile('images',$request->file('image')); //file upload
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename=time(). '.'.$extension;
+            $file->move('assets/images/rooms/',$filename);
+            $data->image=$filename;
+        }else{
+            $data->image = '';
+        }
         $data->price = (float)$request->input('price');
         $data->beds = $request->input('beds');
         $data->view = $request->input('view');
@@ -104,6 +113,15 @@ class RoomController extends Controller
         $data->type = $request->input('type');
         $data->description =$request->input('description');
         //$data->image = Storage::putFile('images',$request->file('image')); //file upload
+        if ($request->hasFile('image')){
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename=time(). '.'.$extension;
+            $file->move('assets/images/rooms/',$filename);
+            $data->image=$filename;
+        }else{
+            $data->image = '';
+        }
         $data->price = (float)$request->input('price');
         $data->beds = $request->input('beds');
         $data->view = $request->input('view');

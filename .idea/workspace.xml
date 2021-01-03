@@ -10,12 +10,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="room model added">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/room/room_add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/room/room_edit.blade.php" afterDir="false" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="room CRUD added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HotelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HotelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/hotel_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hotel_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/hotel_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hotel_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/hotels.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/hotels.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/room/room_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/room/room_edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +235,9 @@
       <workItem from="1608989262787" duration="8898000" />
       <workItem from="1609259142277" duration="13325000" />
       <workItem from="1609398731897" duration="9550000" />
-      <workItem from="1609514023153" duration="13769000" />
+      <workItem from="1609514023153" duration="14090000" />
+      <workItem from="1609624024056" duration="1316000" />
+      <workItem from="1609666757491" duration="2878000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -319,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609521641428</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="room CRUD added">
+      <created>1609534125988</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609534125988</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +362,8 @@
     <MESSAGE value="hotel model added. admin now can add,update,delete hotels" />
     <MESSAGE value="rich text editor added for detail fields in hotel add/edit" />
     <MESSAGE value="room model added" />
-    <option name="LAST_COMMIT_MESSAGE" value="room model added" />
+    <MESSAGE value="room CRUD added" />
+    <option name="LAST_COMMIT_MESSAGE" value="room CRUD added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -402,10 +414,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609521643031">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609534127467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609521643031" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609534127467" />
     <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606474735909">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
