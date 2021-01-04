@@ -10,10 +10,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="model relationships added">
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="fix category&lt;-&gt;model relationship">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HotelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HotelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Hotel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/BootstrapAdmin-master/dist/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/BootstrapAdmin-master/dist/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/dashboard/dist/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/dashboard/dist/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +236,7 @@
       <workItem from="1609624024056" duration="1316000" />
       <workItem from="1609666757491" duration="12135000" />
       <workItem from="1609686742609" duration="15549000" />
-      <workItem from="1609745258856" duration="605000" />
+      <workItem from="1609745258856" duration="3573000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -356,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609701782363</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix category&lt;-&gt;model relationship">
+      <created>1609746115625</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609746115625</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,7 +401,8 @@
     <MESSAGE value="image gallery added" />
     <MESSAGE value="site setting model added" />
     <MESSAGE value="model relationships added" />
-    <option name="LAST_COMMIT_MESSAGE" value="model relationships added" />
+    <MESSAGE value="fix category&lt;-&gt;model relationship" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix category&lt;-&gt;model relationship" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -444,10 +453,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609701783884">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609746116992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609701783884" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609746116992" />
     <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606474735909">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

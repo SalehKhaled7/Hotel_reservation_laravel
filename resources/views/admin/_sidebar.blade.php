@@ -14,17 +14,17 @@
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
                 <div class="nav-lavel">Navigation</div>
-                <div class="nav-item active">
-                    <a href="{{ route('admin') }}"><i class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
+                <div class="nav-item @if(Request::url() === route('admin') ) active @endif  ">
+                    <a href="{{ route('admin') }}"><i class="ik ik-bar-chart-2 @if(Request::url() === route('admin') ) text-orange @endif "></i><span>Dashboard</span></a>
                 </div>
-                <div class="nav-item">
-                    <a href="{{route('admin_category')}}"><i class="ik ik-grid"></i><span>Categories</span></a>
+                <div class="nav-item @if(Request::url() === route('admin_category')) active @endif ">
+                    <a href="{{route('admin_category')}}"><i class="ik ik-grid @if(Request::url() === route('admin_category')) text-orange @endif"></i><span>Categories</span></a>
                 </div>
-                <div class="nav-item">
-                    <a href="{{route('hotels')}}"><i class="ik ik-home"></i><span>Hotels</span></a>
+                <div class="nav-item @if(Request::url() === route('hotels')) active @endif ">
+                    <a href="{{route('hotels')}}"><i class="ik ik-home @if(Request::url() === route('hotels')) text-orange @endif"></i><span>Hotels</span></a>
                 </div>
-                <div class="nav-item">
-                    <a href="{{route('admin_setting')}}"><i class="ik ik-settings"></i><span>Settings</span></a>
+                <div class="nav-item @if(Request::url() === route('admin_setting')) active @endif ">
+                    <a href="{{route('admin_setting')}}"><i class="ik ik-settings @if(Request::url() === route('admin_setting')) text-orange @endif"></i><span>Settings</span></a>
                 </div>
 
                 <div class="nav-lavel">UI Element</div>
