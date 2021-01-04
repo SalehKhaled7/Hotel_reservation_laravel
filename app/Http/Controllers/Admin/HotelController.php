@@ -15,12 +15,12 @@ class HotelController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        $categoryList=DB::select('select * from categories');
-        $dataList=DB::select('select * from hotels');
+        $categoryList=Category::all();
+        $dataList=Hotel::all();
 
         //print_r($dataList);
         //exit();
@@ -30,11 +30,11 @@ class HotelController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
-        $dataList=DB::table('categories')->get();
+        $dataList=Category::all();
         return view('admin.hotel_add',['dataList'=>$dataList]);
     }
 
@@ -95,7 +95,7 @@ class HotelController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Hotel  $hotel
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Hotel $hotel, $id)
     {
@@ -110,7 +110,7 @@ class HotelController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Hotel  $hotel
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Hotel $hotel ,$id)
     {
@@ -153,7 +153,7 @@ class HotelController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Hotel  $hotel
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Hotel $hotel,$id)
     {
