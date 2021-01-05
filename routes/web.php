@@ -18,16 +18,19 @@ Route::get('/home2', function () {
     return view('welcome');
 })->name("login");
 
-//call the page directly without controller
-
-
-Route::get('/',[HomeController::class,'index']); // call index function inside homeController
-
-Route::get('/test/{id}',[HomeController::class,'test'])->where('id','[0-9]+')->name("test"); // get id from url to the function
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+
+//site routes
+Route::get('/',[HomeController::class,'index'])->name('home'); // call index function inside homeController
+Route::get('home',[HomeController::class,'index'])->name('homepage');
+Route::get('/about_us',[HomeController::class,'about_us'])->name('about_us');
+Route::get('/references',[HomeController::class,'references'])->name('references');
+Route::get('/faq',[HomeController::class,'faq'])->name('faq');
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 //admin routes
 Route::middleware('auth')->prefix('admin')->group(function (){
@@ -91,4 +94,4 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login'); // login
 Route::post('/admin/loginAuth',[HomeController::class,'loginAuth'])->name('admin_loginAuth'); // login auth , use post for data sending
-Route::get('/admin/logout',[HomeController::class,'logout'])->name('admin_logout'); // logout
+Route::get('logout',[HomeController::class,'logout'])->name('logout'); // logout

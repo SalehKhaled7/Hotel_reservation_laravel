@@ -1,4 +1,6 @@
-
+@php
+    $setting=\App\Http\Controllers\HomeController::getSetting()
+@endphp
 <!-- FOOTER -->
 <footer id="footer">
 
@@ -25,11 +27,11 @@
                 <div class="col-lg-3">
                     <div class="social">
                         <div class="social-content">
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-google-plus"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+
+                           @if($setting->facebook) <a href="{{$setting->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>@endif
+                            @if($setting->twitter)<a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
+                            @if($setting->linkedin)<a href="{{$setting->linkedin}}" target="_blank"><i class="fa fa-linkedin"></i></a>@endif
+                            @if($setting->instagram)<a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>@endif
                         </div>
                     </div>
                 </div>
@@ -49,12 +51,12 @@
                     <div class="widget widget_logo">
                         <div class="widget-logo">
                             <div class="img">
-                                <a href="#"><img src="{{asset('assets')}}/images/logo-footer.png" alt=""></a>
+                                <a href="/"><img src="{{asset('assets')}}/images/logo-footer.png" alt=""></a>
                             </div>
                             <div class="text">
-                                <p><i class="lotus-icon-location"></i> 225 Beach Street, Australian</p>
-                                <p><i class="lotus-icon-phone"></i> 1-548-854-8898</p>
-                                <p><i class="fa fa-envelope-o"></i> <a href="mailto:hello@thelotushotel.com">hello@thelotushotel.com</a></p>
+                                <p><i class="lotus-icon-location"></i> {{$setting->address}}</p>
+                                <p><i class="lotus-icon-phone"></i> {{$setting->phone}}</p>
+                                <p><i class="fa fa-envelope-o"></i> <a href="mailto:{{$setting->email}}">{{$setting->email}}</a></p>
                             </div>
                         </div>
                     </div>

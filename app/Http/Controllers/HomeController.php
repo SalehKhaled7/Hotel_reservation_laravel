@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public static function getSetting(){
+        return Setting::first();
+    }
     //query main categories
     public static function categoryList(){
         return Category::where('parent_id', 0)->with('child')->get();
@@ -15,10 +19,25 @@ class HomeController extends Controller
 
     public function index()
     {
-        $categoryList=Category::all();
-        //print_r($categoryList);
+        //$setting=Setting::first();
+        //print_r($setting);
         //exit();
-        return view('home.index',['categoryList' => $categoryList]);//call index page inside view>home
+        return view('home.index');//call index page inside view>home
+    }
+    public function about_us(){
+        return view('home.about_us');
+    }
+
+    public function references(){
+       //
+    }
+
+    public function faq(){
+        //
+    }
+
+    public function contact(){
+        //
     }
 
 
@@ -53,7 +72,7 @@ class HomeController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/admin/login');
+        return redirect('/');
     }
 
 

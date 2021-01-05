@@ -1,9 +1,10 @@
+@php
+    $setting=\App\Http\Controllers\HomeController::getSetting()
+@endphp
 @extends('layouts.base')
-@section('title','Hotel Reservation')
-@section('description')
-    this is a web site for hotel reservation
-@endsection
-@section('keywords','reservation travel hotel motel bed room city')
+@section('title',$setting->title)
+@section('description',$setting->description)
+@section('keywords',$setting->keywords)
 @section('content')
     @include('home._slider')
     <!-- CHECK AVAILABILITY -->

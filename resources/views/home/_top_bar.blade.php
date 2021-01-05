@@ -7,28 +7,22 @@
             <span><i class="lotus-icon-phone"></i> 1-548-854-8898</span>
         </div>
         <div class="header_right float-right">
-
-                        <span class="login-register">
-                            <a href="login.html">Login</a>
+        @if(Auth::check())
+                <div class="dropdown currency">
+                    <span>{{Auth::user()->name}} <i class="fa fa"></i></span>
+                    <ul>
+                        <li><a href="#">profile</a></li>
+                        <li><a href="{{route('logout')}}">logout</a></li>
+                    </ul>
+                </div>
+        @else
+                <span class="login-register">
+                            <a href="{{route('admin_login')}}">Login</a>
                             <a href="register.html">register</a>
                         </span>
+        @endif
 
-            <div class="dropdown currency">
-                <span>USD <i class="fa fa"></i></span>
-                <ul>
-                    <li class="active"><a href="#">USD</a></li>
-                    <li><a href="#">EUR</a></li>
-                </ul>
-            </div>
 
-            <div class="dropdown language">
-                <span>ENG</span>
-
-                <ul>
-                    <li class="active"><a href="#">ENG</a></li>
-                    <li><a href="#">FR</a></li>
-                </ul>
-            </div>
 
         </div>
     </div>
