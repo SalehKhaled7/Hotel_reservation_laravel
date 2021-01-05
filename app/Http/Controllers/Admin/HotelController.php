@@ -19,7 +19,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $categoryList=Category::all();
+        $categoryList=Category::with('child')->get();
         $dataList=Hotel::all();
 
         //print_r($dataList);
@@ -34,7 +34,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        $dataList=Category::all();
+        $dataList=Category::with('child')->get();
         return view('admin.hotel_add',['dataList'=>$dataList]);
     }
 
@@ -101,7 +101,7 @@ class HotelController extends Controller
     {
         $data=Hotel::find($id);
         // $data=DB::table('categories')->get()->where('id',$id);
-        $dataList=Category::all();
+        $dataList=Category::with('child')->get();
         return view('admin.hotel_edit',['data'=>$data,'dataList' => $dataList]);
     }
 

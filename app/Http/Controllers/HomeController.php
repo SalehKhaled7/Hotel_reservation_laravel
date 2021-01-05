@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    //
+    //query main categories
+    public static function categoryList(){
+        return Category::where('parent_id', 0)->with('child')->get();
+    }
 
     public function index()
     {
-        return view('home.index');//call index page inside view>home
+        $categoryList=Category::all();
+        //print_r($categoryList);
+        //exit();
+        return view('home.index',['categoryList' => $categoryList]);//call index page inside view>home
     }
 
-    public function test($id)
-    {
-        echo "the id is :", $id;
-    }
 
     public function login(){ // return dashboard > login page
         return view('admin.login');

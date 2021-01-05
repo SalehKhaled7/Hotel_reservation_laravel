@@ -9,14 +9,30 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
+    protected $appends = [
+        'getParentTree'
+    ];
+
+    public static function getParentTree($category, $title)
+    {
+        if ($category->parent_id == 0) {
+            return $title;
+        }
+
+        $parent = Category::find($category->parent_id);
+        $title = $parent->title . ' > ' . $title;
+        return CategoryController::getParentTree($parent, $title);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        $dataList=DB::select('select * from categories');
+        $dataList=Category::with('child')->get();
 
         //print_r($dataList);
         //exit();
@@ -24,7 +40,7 @@ class CategoryController extends Controller
     }
 
     public function add(){
-        $dataList=DB::table('categories')->get()->where('parent_id',0);
+        $dataList=Category::with('child')->get();;
         return view('admin.category_add',['dataList'=>$dataList]);
     }
 
@@ -78,7 +94,7 @@ class CategoryController extends Controller
     {
         $data=Category::find($id);
        // $data=DB::table('categories')->get()->where('id',$id);
-        $dataList=DB::table('categories')->get()->where('parent_id',0);
+        $dataList=Category::with('child')->get();;
         return view('admin.category_edit',['data'=>$data,'dataList' => $dataList]);
     }
 

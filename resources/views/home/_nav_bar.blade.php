@@ -1,4 +1,5 @@
 <!-- HEADER LOGO & MENU -->
+@php($parentCategories = \App\Http\Controllers\HomeController::categoryList())
 <div class="header_content" id="header_content">
 
     <div class="container">
@@ -18,6 +19,22 @@
                         <li><a href="index-2.html">Home 2</a></li>
                         <li><a href="index-3.html">Home 3</a></li>
                         <li><a href="index-4.html">Home 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Hotels <span class="fa fa-caret-down"></span></a>
+                    <ul class="sub-menu">
+                        @foreach($parentCategories as $rs)
+                        <li>
+                            <a href="#">{{$rs->title}} @if(count($rs->child))<span class="fa fa-caret-right"></span> @endif</a>
+
+                                @if(count($rs->child))
+                                    @include('home._category_tree',['child'=>$rs->child])
+                                    @endif
+
+                        </li>
+
+                        @endforeach
                     </ul>
                 </li>
                 <li><a href="about.html">About</a></li>

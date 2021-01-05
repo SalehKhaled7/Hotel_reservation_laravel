@@ -68,7 +68,7 @@
                                 @foreach($dataList as $rs)
                                 <tr>
                                     <td>{{$rs-> id}}</td>
-                                    <td>{{$rs->category->title}}</td>
+                                    <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs->category,$rs->category->title) }}</td>
                                     <td>{{$rs-> title}}</td>
                                     <td>{{$rs-> star}}</td>
                                     <td>@if($rs->image) <img src="{{asset('assets')}}/images/hotels/{{$rs->image}}" alt="image" height="50px"> @endif</td>

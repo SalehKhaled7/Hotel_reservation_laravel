@@ -47,7 +47,7 @@
                                         <select class="form-control select2" name="parent_id">
                                             <option value="0"> Main category</option>
                                             @foreach($dataList as $rs)
-                                            <option value="{{$rs-> id}}" @if($rs->id == $data->parent_id)  selected="selected" @endif >{{$rs-> title}}</option>
+                                            <option value="{{$rs-> id}}" @if($rs->id == $data->parent_id)  selected="selected" @endif >{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs,$rs->title) }}</option>
                                             @endforeach
 
                                         </select>
@@ -93,7 +93,6 @@
                             </div>
 
                             <button type="submit" class="btn btn-primary mr-2">Update</button>
-                            <button class="btn btn-light">Cancel</button>
                         </form>
                     </div>
                 </div>

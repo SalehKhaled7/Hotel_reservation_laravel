@@ -19,11 +19,9 @@ Route::get('/home2', function () {
 })->name("login");
 
 //call the page directly without controller
-Route::get('/', function () {
-    return view('home.index');
-})->name("home");
 
-Route::get('/home',[HomeController::class,'index']); // call index function inside homeController
+
+Route::get('/',[HomeController::class,'index']); // call index function inside homeController
 
 Route::get('/test/{id}',[HomeController::class,'test'])->where('id','[0-9]+')->name("test"); // get id from url to the function
 

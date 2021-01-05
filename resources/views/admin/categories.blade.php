@@ -55,8 +55,8 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>title</th>
-                                    <th>Image</th>
+                                    <th>Parent Category</th>
+                                    <th>Title</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -65,8 +65,8 @@
                                 @foreach($dataList as $rs)
                                 <tr>
                                     <td>{{$rs-> id}}</td>
+                                    <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentTree($rs,$rs->title) }}</td>
                                     <td>{{$rs-> title}}</td>
-                                    <td><img src="{{asset('assets')}}/dashboard//img/widget/p1.jpg" alt="" class="img-fluid img-20"></td>
                                     <td>@if($rs -> status == 'true')
                                         <div class="p-status bg-green"></div>
                                         @else
