@@ -44,6 +44,9 @@ class HomeController extends Controller
     public function login(){ // return dashboard > login page
         return view('admin.login');
     }
+    public function user_login(){ // return dashboard > login page
+        return view('home.user.user_login');
+    }
 
 
     public function loginAuth(Request $request){
@@ -62,6 +65,25 @@ class HomeController extends Controller
         }
         else{
             return view('admin.login');
+        }
+
+    }
+    public function user_loginAuth(Request $request){
+        if($request->isMethod('post')){
+            $credentials = $request->only('email', 'password');
+
+            if (Auth::attempt($credentials)) {
+                $request->session()->regenerate();
+
+                return redirect()->intended('/');
+            }
+
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
+        }
+        else{
+            return view('home.user.user_login');
         }
 
     }

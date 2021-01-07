@@ -26,7 +26,7 @@
     <section class="section-about">
         <div class="container">
 
-            {{$setting->about_us}}
+            {!! $setting->about_us !!}
         </div>
     </section>
 

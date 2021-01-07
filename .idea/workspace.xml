@@ -10,15 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="Home page setting meta tags">
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user/_base.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user/user_profile.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/appx.blade.php" afterDir="false" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="using Jetstream user profile in the project">
+      <change afterPath="$PROJECT_DIR$/resources/views/home/user/user_login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_top_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/about_us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/about_us.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="data_tables" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -244,7 +241,9 @@
       <workItem from="1609686742609" duration="15549000" />
       <workItem from="1609745258856" duration="3989000" />
       <workItem from="1609840895849" duration="23876000" />
-      <workItem from="1609974805821" duration="6409000" />
+      <workItem from="1609974805821" duration="9417000" />
+      <workItem from="1610044804872" duration="687000" />
+      <workItem from="1610057013650" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -393,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609877555758</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="using Jetstream user profile in the project">
+      <created>1609981530399</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609981530399</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +440,8 @@
     <MESSAGE value="admin navigations now have active effect" />
     <MESSAGE value="nested relationships ,category &lt;-&gt; subcategories" />
     <MESSAGE value="Home page setting meta tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home page setting meta tags" />
+    <MESSAGE value="using Jetstream user profile in the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="using Jetstream user profile in the project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -477,10 +484,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609980531015" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1609977693071">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1609982091415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609977693071" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609982091415" />
     <state x="721" y="222" key="RollbackChangesDialog" timestamp="1608839940481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -489,10 +496,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609877556807">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609981531875">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609877556807" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609981531875" />
     <state x="861" y="253" width="438" height="533" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1606474735909">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
