@@ -17,7 +17,7 @@
                 </div>
         @else
                 <span class="login-register">
-                            <a href="{{route('admin_login')}}">Login</a>
+                            <a href="{{route('user_login')}}">Login</a>
                             <a href="register.html">register</a>
                         </span>
         @endif

@@ -96,6 +96,8 @@ Route::middleware('auth')->prefix('_user')->namespace('_user')->group(function (
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('profile');
 
 });
+Route::get('login',[HomeController::class,'user_login'])->name('user_login'); // login
+Route::post('loginAuth',[HomeController::class,'user_loginAuth'])->name('user_loginAuth'); // login auth , use post for data sending
 
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login'); // login
 Route::post('/admin/loginAuth',[HomeController::class,'loginAuth'])->name('admin_loginAuth'); // login auth , use post for data sending
