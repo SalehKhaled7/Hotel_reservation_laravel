@@ -11,7 +11,7 @@
                 <div class="dropdown currency">
                     <span>{{Auth::user()->name}} <i class="fa fa"></i></span>
                     <ul>
-                        <li><a href="#">profile</a></li>
+                        <li><a href="{{route('profile')}}">profile</a></li>
                         <li><a href="{{route('logout')}}">logout</a></li>
                     </ul>
                 </div>
