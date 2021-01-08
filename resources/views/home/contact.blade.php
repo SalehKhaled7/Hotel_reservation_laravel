@@ -33,19 +33,24 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-lg-offset-1">
                         <div class="contact-form">
-                            <form id="send-contact-form" action="send_mail_contact.php" method="post">
+                            @include('flash_message')
+                            <form  action="{{route('send_message')}}" method="post">
+                                @csrf
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <input type="text" class="field-text"  name="name" placeholder="Name">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="field-text" name="email" placeholder="Email">
+                                        <input type="email" class="field-text" name="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="field-text" name="phone" placeholder="phone">
                                     </div>
                                     <div class="col-sm-12">
                                         <input type="text" class="field-text" name="subject" placeholder="Subject">
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea cols="30" rows="10" name="message"  class="field-textarea" placeholder="Write what do you want"></textarea>
+                                        <textarea cols="30" rows="10" name="message"  class="field-textarea" placeholder="Write your message ..."></textarea>
                                     </div>
                                     <div class="col-sm-6">
                                         <button type="submit" class="awe-btn awe-btn-13">SEND</button>

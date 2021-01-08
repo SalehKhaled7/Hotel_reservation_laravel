@@ -1,3 +1,8 @@
+@php
+
+     $new_messages=app('\App\Http\Controllers\Admin\HomeController')->new_messages();
+
+@endphp
 <header class="header-top" header-theme="light">
     <div class="container-fluid">
         <div class="d-flex justify-content-between">
@@ -49,7 +54,7 @@
                         <div class="footer"><a href="javascript:void(0);">See all activity</a></div>
                     </div>
                 </div>
-                <button type="button" class="nav-link ml-10 right-sidebar-toggle"><i class="ik ik-message-square"></i><span class="badge bg-success">3</span></button>
+                <a href="{{route('messages')}}"><button type="button" class="nav-link ml-10 "><i class="ik ik-message-square"></i>@if(count($new_messages) > 0 )<span class="badge bg-success">{{count($new_messages)}}</span> @endif </button></a>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ik ik-plus"></i></a>
                     <div class="dropdown-menu dropdown-menu-right menu-grid" aria-labelledby="menuDropdown">
@@ -73,8 +78,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i> Profile</a>
                         <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i> Settings</a>
-                        <a class="dropdown-item" href="#"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="ik ik-mail dropdown-icon"></i> Inbox</a>
-                        <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i> Message</a>
+                        <a class="dropdown-item" href="{{route('messages')}}"><span class="float-right">@if(count($new_messages) > 0 )<span class="badge badge-primary">{{count($new_messages)}}</span> @endif </span><i class="ik ik-mail dropdown-icon"></i> Inbox</a>
                         <a class="dropdown-item" href="{{ route('logout')}} "><i class="ik ik-power dropdown-icon"></i> Logout</a>
                     </div>
                 </div>

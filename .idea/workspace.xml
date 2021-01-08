@@ -10,18 +10,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="login page for normal user added">
-      <change afterPath="$PROJECT_DIR$/resources/views/home/contact.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/faq.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/references.blade.php" afterDir="false" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="about us ,contact ,references and faq pages added">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/message/message_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/message/messages.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/flash_message.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/311a9e40-dd61-4923-991c-862045e582f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/311a9e40-dd61-4923-991c-862045e582f2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jetstream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/setting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/setting.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/about_us.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/about_us.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +201,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\admin\message" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\app\Http\Controllers\Admin" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home" />
       <recent name="C:\xampp\htdocs\Laravel\project2\storage\app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -252,7 +256,7 @@
       <workItem from="1609974805821" duration="9417000" />
       <workItem from="1610044804872" duration="687000" />
       <workItem from="1610057013650" duration="1341000" />
-      <workItem from="1610117543220" duration="9461000" />
+      <workItem from="1610117543220" duration="21997000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -408,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609981530399</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="about us ,contact ,references and faq pages added">
+      <created>1610127318009</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1610127318009</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +461,8 @@
     <MESSAGE value="nested relationships ,category &lt;-&gt; subcategories" />
     <MESSAGE value="Home page setting meta tags" />
     <MESSAGE value="using Jetstream user profile in the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="using Jetstream user profile in the project" />
+    <MESSAGE value="about us ,contact ,references and faq pages added" />
+    <option name="LAST_COMMIT_MESSAGE" value="about us ,contact ,references and faq pages added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -461,10 +473,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608927564643" />
-    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1609692512561">
+    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610143403127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609692512561" />
+    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610143403127" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1607019545512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -493,10 +505,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609980531015" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1609982091415">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1610140515031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609982091415" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610140515031" />
     <state x="721" y="222" key="RollbackChangesDialog" timestamp="1608839940481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -505,10 +517,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1609981531875">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610127320046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609981531875" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610127320046" />
     <state x="540" y="174" key="com.intellij.database.dbimport.ImportDialog" timestamp="1610125673960">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

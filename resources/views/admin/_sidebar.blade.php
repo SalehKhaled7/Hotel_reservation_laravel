@@ -27,7 +27,11 @@
                     <a href="{{route('admin_setting')}}"><i class="ik ik-settings @if(Request::url() === route('admin_setting')) text-orange @endif"></i><span>Settings</span></a>
                 </div>
 
-                <div class="nav-lavel">UI Element</div>
+                <div class="nav-lavel">Other</div>
+                <div class="nav-item @if(Request::url() === route('messages')) active @endif ">
+                    <a href="{{route('messages')}}"><i class="ik ik-message-square @if(Request::url() === route('messages')) text-orange @endif"></i><span>Messages</span></a>
+                </div>
+
                 <div class="nav-item has-sub">
                     <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
                     <div class="submenu-content">
