@@ -64,6 +64,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="pills-about_us-tab" data-toggle="pill" href="#references" role="tab" aria-controls="pills-about_us" aria-selected="false">References</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="pills-faq-tab" data-toggle="pill" href="#faq" role="tab" aria-controls="pills-faq" aria-selected="false">FAQ</a>
+                                    </li>
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="pills-timeline-tab">
@@ -257,11 +260,26 @@
 
                                                 </div>
                                             </div>
-
-
                                         </div>
-
                                     </div>
+                                    <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="pills-faq-tab">
+                                        <div class="card-body">
+
+                                            <div class="form-group row">
+                                                <label  class="col-sm-3 col-form-label">FAQ</label>
+                                                <div  class="col-sm-9">
+                                                    <textarea id="faq2" name="faq">{{$data->faq}}</textarea>
+                                                    <script>
+                                                        $(document).ready(function() {
+                                                            $('#faq2').summernote();
+                                                        });
+                                                    </script>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                                     <div class="card-body">
                                     <button type="submit" class="btn btn-success bg-blue">Update</button>

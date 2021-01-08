@@ -1,6 +1,6 @@
 
 @extends('layouts.base')
-@section('title',$setting->title.'-about us')
+@section('title',$setting->title.'-FAQ')
 @section('description',$setting->description)
 @section('keywords',$setting->keywords)
 @section('content')
@@ -10,8 +10,8 @@
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-center">
-                    <h2>ABOUT {{$setting->title}}</h2>
-                    <a href="{{route('home')}}">{{$setting->title}}</a> > <a>About US</a>
+                    <h2>FAQ</h2>
+                    <a href="{{route('home')}}">{{$setting->title}}</a> > <a>FAQ</a>
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
     <section class="section-about">
         <div class="container">
 
-            {!! $setting->about_us !!}
+            {!! $setting->faq !!}
         </div>
     </section>
 

@@ -25,19 +25,23 @@ class HomeController extends Controller
         return view('home.index');//call index page inside view>home
     }
     public function about_us(){
-        return view('home.about_us');
+        $setting=Setting::first();
+        return view('home.about_us',['setting'=>$setting]);
     }
 
     public function references(){
-       //
+        $setting=Setting::first();
+        return view('home.references',['setting'=>$setting]);
     }
 
     public function faq(){
-        //
+        $setting=Setting::first();
+        return view('home.faq',['setting'=>$setting]);
     }
 
     public function contact(){
-        //
+        $setting=Setting::first();
+        return view('home.contact',['setting'=>$setting]);
     }
 
 
