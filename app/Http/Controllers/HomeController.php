@@ -107,6 +107,19 @@ class HomeController extends Controller
         return view('home.room_detail',$context);
     }
 
+    public function get_hotels_via_category($category_id){
+        $hotel_list=Hotel::all()->where('category_id',$category_id);
+        $setting=Setting::first();
+        $category=Category::find($category_id);
+        $context=[
+            'hotel_list'=>$hotel_list,
+            'setting'=>$setting,
+            'category'=>$category,
+        ];
+        return view('home.hotel_list',$context);
+
+    }
+
 
     public function login(){ // return dashboard > login page
         return view('admin.login');

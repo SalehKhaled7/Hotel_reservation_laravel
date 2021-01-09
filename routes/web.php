@@ -37,6 +37,8 @@ Route::post('/contact/send_message',[HomeController::class,'send_message'])->nam
 Route::get('hotels',[HomeController::class,'hotels'])->name('hotel_list');
 Route::get('hotel/{id}/rooms',[HomeController::class,'rooms'])->name('room_list');
 Route::get('hotel/{hotel_id}/room/{room_id}',[HomeController::class,'rooms_detail'])->name('room_detail');
+Route::get('category/{category_id}/hotels',[HomeController::class,'get_hotels_via_category'])->name('get_hotels_via_category');
+
 
 
 //admin routes

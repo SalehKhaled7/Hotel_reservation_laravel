@@ -22,7 +22,7 @@
                     <ul class="sub-menu">
                         @foreach($parentCategories as $rs)
                         <li>
-                            <a href="#">{{$rs->title}} @if(count($rs->child))<span class="fa fa-caret-right"></span> @endif</a>
+                            <a @if(!count($rs->child)) href="{{route('get_hotels_via_category',['category_id'=>$rs->id])}}" @endif >{{$rs->title}} @if(count($rs->child))<span class="fa fa-caret-right"></span> @endif</a>
 
                                 @if(count($rs->child))
                                     @include('home._category_tree',['child'=>$rs->child])
