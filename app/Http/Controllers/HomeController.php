@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\FrontSetting;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -14,6 +15,9 @@ class HomeController extends Controller
     public static function getSetting(){
         return Setting::first();
     }
+    public static function getFrontSetting(){
+        return FrontSetting::first();
+    }
     //query main categories
     public static function categoryList(){
         return Category::where('parent_id', 0)->with('child')->get();
@@ -24,6 +28,7 @@ class HomeController extends Controller
         //$setting=Setting::first();
         //print_r($setting);
         //exit();
+
         return view('home.index');//call index page inside view>home
     }
     public function about_us(){

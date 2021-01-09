@@ -1,5 +1,6 @@
 @php
-    $setting=\App\Http\Controllers\HomeController::getSetting()
+    $setting=\App\Http\Controllers\HomeController::getSetting();
+    $front_setting=\App\Http\Controllers\HomeController::getFrontSetting();
 @endphp
 @extends('layouts.base')
 @section('title',$setting->title)
@@ -46,7 +47,7 @@
     <!-- END / CHECK AVAILABILITY -->
 
     <!-- ACCOMD ODATIONS -->
-    <section class="section-accomd awe-parallax bg-14">
+    <section class="section-accomd awe-parallax " style="background-image:url('{{Storage::url($front_setting->index_hotel_bg)}}')">
         <div class="container">
             <div class="accomd-modations">
                 <div class="row">
@@ -278,15 +279,15 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="img">
-                            <a href="#"><img src="{{asset('assets')}}/images/home/about/img-1.jpg" alt=""></a>
+                            <a href="#"><img src="{{Storage::url($front_setting->index_about_us_img)}}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="text">
                             <h2 class="heading">ABOUT US</h2>
                             <span class="box-border"></span>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source</p>
-                            <a href="#" class="awe-btn awe-btn-default">READ MORE</a>
+                            <p>{{$front_setting->index_about_us}}</p>
+                            <a href="{{route('about_us')}}" class="awe-btn awe-btn-default">READ MORE</a>
                         </div>
                     </div>
                 </div>
@@ -331,7 +332,7 @@
     <!-- END / OUR BEST -->
 
     <!-- HOME GUEST BOOK -->
-    <div class="section-home-guestbook awe-parallax bg-13">
+    <div class="section-home-guestbook awe-parallax " style="background-image:url('{{Storage::url($front_setting->index_review_bg)}}')">
         <div class="container">
             <div class="home-guestbook">
                 <div class="row">

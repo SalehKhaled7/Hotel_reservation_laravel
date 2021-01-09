@@ -1,10 +1,14 @@
+@php
+    $setting=\App\Http\Controllers\HomeController::getSetting();
+    $front_setting=\App\Http\Controllers\HomeController::getFrontSetting();
+@endphp
 <!-- BANNER SLIDER -->
 <section class="section-slider">
     <h1 class="element-invisible">Slider</h1>
     <div id="slider-revolution">
         <ul>
             <li data-transition="fade">
-                <img src="{{asset('assets')}}/images/slider/img-1.jpg" data-bgposition="left center" data-duration="14000" data-bgpositionend="right center" alt="">
+                <img src="{{Storage::url($front_setting->slider_img1)}}" data-bgposition="left center" data-duration="14000" data-bgpositionend="right center" alt="">
 
                 <div class="tp-caption sft fadeout slider-caption-sub slider-caption-1" data-x="center" data-y="100" data-speed="700" data-start="1500" data-easing="easeOutBack">
                     <img src="{{asset('assets')}}/images/slider/hom1-slide1.png" alt="icons">
@@ -20,7 +24,7 @@
             </li>
 
             <li data-transition="fade">
-                <img src="{{asset('assets')}}/images/slider/img-1.jpg" data-bgposition="left center" data-duration="14000" data-bgpositionend="right center" alt="">
+                <img src="{{Storage::url($front_setting->slider_img2)}}" data-bgposition="left center" data-duration="14000" data-bgpositionend="right center" alt="">
 
                 <div class="tp-caption sft fadeout" data-x="center" data-y="195" data-speed="700" data-start="1300" data-easing="easeOutBack">
                     <img src="{{asset('assets')}}/images/icon-slider-1.png" alt="">
