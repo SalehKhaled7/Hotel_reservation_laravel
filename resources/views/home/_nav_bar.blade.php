@@ -18,7 +18,7 @@
                     <a href="/">Home</a>
                 </li>
                 <li @if(Request::url() === route('hotels') ) class="current-menu-item" @endif >
-                    <a href="#">Hotels <span class="fa fa-caret-down"></span></a>
+                    <a href="{{route('hotel_list')}}">Hotels <span class="fa fa-caret-down"></span></a>
                     <ul class="sub-menu">
                         @foreach($parentCategories as $rs)
                         <li>

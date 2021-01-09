@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\FrontSetting;
+use App\Models\Hotel;
 use App\Models\Message;
+use App\Models\Room;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,6 +64,31 @@ class HomeController extends Controller
         $data->save();
         return back()->with('success','Message send successfully . ');
 
+    }
+
+    public function hotels(){
+        $hotel_list=Hotel::all()->where('status','true');
+        $setting=Setting::first();
+        $context = [
+            'hotel_list'=>$hotel_list,
+            'setting'=>$setting
+
+        ];
+        return view('home.hotels',$context);
+    }
+    public function rooms($id){
+        $room_list=Room::all()->where('hotel_id',$id);
+        $hotel=Hotel::find($id);
+        //print_r($room_list);
+        //exit();
+        $setting=Setting::first();
+        $context = [
+            'room_list'=>$room_list,
+            'setting'=>$setting,
+            'hotel'=>$hotel
+
+        ];
+        return view('home.rooms',$context);
     }
 
 

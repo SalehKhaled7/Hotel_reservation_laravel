@@ -34,6 +34,10 @@ Route::get('/references',[HomeController::class,'references'])->name('references
 Route::get('/faq',[HomeController::class,'faq'])->name('faq');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::post('/contact/send_message',[HomeController::class,'send_message'])->name('send_message');
+Route::get('hotels',[HomeController::class,'hotels'])->name('hotel_list');
+Route::get('hotel/{id}/rooms',[HomeController::class,'rooms'])->name('room_list');
+Route::get('hotel/{hotel_id}/room/{room_id}',[HomeController::class,'rooms_detail'])->name('room_detail');
+
 
 //admin routes
 Route::middleware('auth')->prefix('admin')->group(function (){
