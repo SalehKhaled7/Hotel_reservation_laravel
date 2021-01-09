@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="accomd-modations-header">
-                            <h2 class="heading">ROOMS & RATES</h2>
+                            <h2 class="heading">HOTELS & RATES</h2>
                             <img src="{{asset('assets')}}/images/icon-accmod.png" alt="icon">
                             <p>Semper ac dolor vitae accumsan. Cras interdum hendrerit lacinia. Phasellus accumsan urna vitae molestie interdum. Nam sed placerat libero, non eleifend dolor.</p>
                         </div>
@@ -62,203 +62,45 @@
                         <div class="accomd-modations-content owl-single">
 
                             <div class="row">
-
+                            @foreach($hotel_list as $rs)
                                 <!-- ITEM -->
                                 <div class="col-xs-4">
                                     <div class="accomd-modations-room">
                                         <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
+                                            <a href="{{route('room_list',['id'=>$rs->id])}}"><img src="{{asset('assets')}}/images/hotels/{{$rs->image}}" alt=""></a>
                                         </div>
                                         <div class="text">
-                                            <h2><a href="#">Luxury Room</a></h2>
+                                            <h2><a href="{{route('room_list',['id'=>$rs->id])}}">{{$rs-> title }}</a></h2>
                                             <p class="price">
-                                                <span class="amout">$320</span>/days
+                                                <span class="amout">{{$rs->star}}</span> Star
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+
                                 <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Family Room</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/days
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Couple Room</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/days
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Standard</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Standard</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Standard</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
+                                @endforeach
 
                             </div>
 
                             <div class="row">
 
                                 <!-- ITEM -->
+                                @foreach($hotel_list2 as $rs2)
                                 <div class="col-xs-4">
                                     <div class="accomd-modations-room">
                                         <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
+                                            <a href="{{route('room_list',['id'=>$rs2->id])}}"><img src="{{asset('assets')}}/images/hotels/{{$rs2->image}}" alt=""></a>
                                         </div>
                                         <div class="text">
-                                            <h2><a href="#">Luxury Room</a></h2>
+                                            <h2><a href="{{route('room_list',['id'=>$rs2->id])}}">{{$rs-> title }}</a></h2>
                                             <p class="price">
-                                                <span class="amout">$320</span>/days
+                                                <span class="amout">{{$rs2->star}}</span> Star
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Family Room</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/days
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Couple Room</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/days
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Standard</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Standard</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-4">
-                                    <div class="accomd-modations-room">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/room/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <h2><a href="#">Standard</a></h2>
-                                            <p class="price">
-                                                <span class="amout">$320</span>/day
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                                 <!-- END / ITEM -->
 
                             </div>

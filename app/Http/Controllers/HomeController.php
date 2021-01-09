@@ -28,11 +28,17 @@ class HomeController extends Controller
 
     public function index()
     {
-        //$setting=Setting::first();
-        //print_r($setting);
-        //exit();
+        $hotels_list1=Hotel::select('id','title','image','star')->limit(6)->inRandomOrder()->get();
+        $hotels_list2=Hotel::select('id','title','image','star')->limit(6)->inRandomOrder()->get();
 
-        return view('home.index');//call index page inside view>home
+        //print_r(count($hotels_list2));
+        //exit();
+        $data=[
+            'hotel_list'=>$hotels_list1,
+            'hotel_list2'=>$hotels_list2,
+        ];
+
+        return view('home.index',$data);//call index page inside view>home
     }
     public function about_us(){
         $setting=Setting::first();
