@@ -127,12 +127,8 @@
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Details</label>
                                 <div  class="col-sm-9">
-                                    <textarea id="summernote" name="details"></textarea>
-                                    <script>
-                                        $(document).ready(function() {
-                                            $('#summernote').summernote();
-                                        });
-                                    </script>
+                                    <textarea class="form-control" name="details" rows="5"></textarea>
+
                                 </div>
 
                             </div>

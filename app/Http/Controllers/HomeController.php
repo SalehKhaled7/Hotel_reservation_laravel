@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\FrontSetting;
 use App\Models\Hotel;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Room;
 use App\Models\Setting;
@@ -89,6 +90,21 @@ class HomeController extends Controller
 
         ];
         return view('home.rooms',$context);
+    }
+
+    public function rooms_detail($hotel_id,$room_id){
+        $image_list = Image::all()->where('room_id',$room_id);
+        $room=Room::find($room_id);
+        $hotel=Hotel::find($hotel_id);
+        $setting=Setting::first();
+        $context = [
+            'room'=>$room,
+            'setting'=>$setting,
+            'hotel'=>$hotel,
+            'image_list'=>$image_list
+
+        ];
+        return view('home.room_detail',$context);
     }
 
 

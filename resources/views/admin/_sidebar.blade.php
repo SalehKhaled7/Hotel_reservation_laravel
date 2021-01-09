@@ -23,14 +23,18 @@
                 <div class="nav-item @if(Request::url() === route('hotels')) active @endif ">
                     <a href="{{route('hotels')}}"><i class="ik ik-home @if(Request::url() === route('hotels')) text-orange @endif"></i><span>Hotels</span></a>
                 </div>
-                <div class="nav-item @if(Request::url() === route('admin_setting')) active @endif ">
-                    <a href="{{route('admin_setting')}}"><i class="ik ik-settings @if(Request::url() === route('admin_setting')) text-orange @endif"></i><span>Settings</span></a>
-                </div>
-
-                <div class="nav-lavel">Other</div>
                 <div class="nav-item @if(Request::url() === route('messages')) active @endif ">
                     <a href="{{route('messages')}}"><i class="ik ik-message-square @if(Request::url() === route('messages')) text-orange @endif"></i><span>Messages</span></a>
                 </div>
+
+                <div class="nav-lavel">Other</div>
+                <div class="nav-item @if(Request::url() === route('admin_setting')) active @endif ">
+                    <a href="{{route('admin_setting')}}"><i class="ik ik-settings @if(Request::url() === route('admin_setting')) text-orange @endif"></i><span>Settings</span></a>
+                </div>
+                <div class="nav-item @if(Request::url() === route('admin_front_setting')) active @endif ">
+                    <a href="{{route('admin_front_setting')}}"><i class="ik ik-monitor @if(Request::url() === route('admin_front_setting')) text-orange @endif"></i><span>Ui Settings</span></a>
+                </div>
+
 
                 <div class="nav-item has-sub">
                     <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
