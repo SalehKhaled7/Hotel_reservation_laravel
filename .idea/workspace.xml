@@ -10,11 +10,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="hotel lists from categories in the nav-bar added">
-      <change afterPath="$PROJECT_DIR$/resources/views/home/rooms.blade.php" afterDir="false" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="show hotels in home page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TEMPS/lotushtml-101/Lotus/images/less/footer.less" beforeDir="false" afterPath="$PROJECT_DIR$/TEMPS/lotushtml-101/Lotus/images/less/footer.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RoomController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/hotels.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/hotels.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/rooms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +255,9 @@
       <workItem from="1610044804872" duration="687000" />
       <workItem from="1610057013650" duration="1341000" />
       <workItem from="1610117543220" duration="23140000" />
-      <workItem from="1610170162878" duration="35071000" />
+      <workItem from="1610170162878" duration="35281000" />
+      <workItem from="1610223491753" duration="4054000" />
+      <workItem from="1610294675162" duration="8769000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -448,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610211274013</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="show hotels in home page">
+      <created>1610214208879</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1610214208879</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,7 +484,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="update 1.0" />
     <MESSAGE value="integrating admin template into the project" />
     <MESSAGE value="admin login / auth" />
     <MESSAGE value="Category model added, retrieve categories from database and list them" />
@@ -495,7 +508,8 @@
     <MESSAGE value="hotels page added" />
     <MESSAGE value="hotel rooms and room detail pages added" />
     <MESSAGE value="hotel lists from categories in the nav-bar added" />
-    <option name="LAST_COMMIT_MESSAGE" value="hotel lists from categories in the nav-bar added" />
+    <MESSAGE value="show hotels in home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="show hotels in home page" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -550,10 +564,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610211275146">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610214210091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610211275146" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610214210091" />
     <state x="540" y="174" key="com.intellij.database.dbimport.ImportDialog" timestamp="1610125673960">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

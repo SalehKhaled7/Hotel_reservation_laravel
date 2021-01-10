@@ -31,21 +31,35 @@
 
                         <!-- LAGER IMGAE -->
                         <div class="room-detail_img">
+
+
+                            @if(count($image_list)>0)
                             @foreach($image_list as $rs)
                             <div class="room_img-item">
                                 <img src="{{asset('assets')}}/images/hotels/{{$hotel->title}}/{{$room->title}}/{{$rs->image}}" alt="">
 
                             </div>
                             @endforeach
+                            @else
+                                <div class="room_img-item">
+                                    <img src="{{asset('assets')}}/images/rooms/{{$room->image}}" alt="">
+
+                                </div>
+                            @endif
+
 
                         </div>
                         <!-- END / LAGER IMGAE -->
 
                         <!-- THUMBNAIL IMAGE -->
                         <div class="room-detail_thumbs">
+                            @if(count($image_list)>0)
                             @foreach($image_list as $rs)
                             <a href="#"><img src="{{asset('assets')}}/images/hotels/{{$hotel->title}}/{{$room->title}}/{{$rs->image}}" alt=""></a>
                             @endforeach
+                            @else
+                                    <a href="#"><img src="{{asset('assets')}}/images/rooms/{{$room->image}}" alt=""></a>
+                            @endif
 
                         </div>
                         <!-- END / THUMBNAIL IMAGE -->

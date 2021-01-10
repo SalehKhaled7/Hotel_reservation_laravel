@@ -11,6 +11,7 @@ use App\Models\Room;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use function Illuminate\Support\Facades\Request;
 
 class HomeController extends Controller
@@ -30,12 +31,14 @@ class HomeController extends Controller
     {
         $hotels_list1=Hotel::select('id','title','image','star')->limit(6)->inRandomOrder()->get();
         $hotels_list2=Hotel::select('id','title','image','star')->limit(6)->inRandomOrder()->get();
+        $cities = Hotel::select('city')->distinct()->get();
 
-        //print_r(count($hotels_list2));
+        //print_r(count($cities));
         //exit();
         $data=[
             'hotel_list'=>$hotels_list1,
             'hotel_list2'=>$hotels_list2,
+            'cities'=>$cities,
         ];
 
         return view('home.index',$data);//call index page inside view>home
@@ -126,6 +129,20 @@ class HomeController extends Controller
 
     }
 
+    public function find_hotel(Request $request){
+        $city =$request->input('city');
+        $check_in= $request->input('check_in');
+        $check_out= $request->input('check_out');
+        $people= $request->input('people');
+
+        $available_hotels=Hotel::where('city',$city)->get();
+        $setting=Setting::first();
+        $data = [
+            'hotel_list'=>$available_hotels,
+            'setting'=>$setting,
+        ];
+        return view('home.hotels',$data);
+    }
 
     public function login(){ // return dashboard > login page
         return view('admin.login');

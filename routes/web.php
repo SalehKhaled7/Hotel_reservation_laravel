@@ -38,6 +38,8 @@ Route::get('hotels',[HomeController::class,'hotels'])->name('hotel_list');
 Route::get('hotel/{id}/rooms',[HomeController::class,'rooms'])->name('room_list');
 Route::get('hotel/{hotel_id}/room/{room_id}',[HomeController::class,'rooms_detail'])->name('room_detail');
 Route::get('category/{category_id}/hotels',[HomeController::class,'get_hotels_via_category'])->name('get_hotels_via_category');
+Route::post('hotel/find',[HomeController::class,'find_hotel'])->name('find_hotel');
+
 
 
 

@@ -17,25 +17,26 @@
                         <h2>CHECK AVAILABILITY</h2>
                     </div>
                     <div class="col-lg-9">
-                        <form id="ajax-form-search-room" action="search_step_2.php" method="post">
+                        <form  action="{{route('find_hotel')}}" method="post">
+                            @csrf
                             <div class="availability-form">
-                                <input type="text" name="arrive" class="awe-calendar from" placeholder="Arrival Date">
-                                <input type="text" name="departure" class="awe-calendar to" placeholder="Departure Date">
-
-                                <select class="awe-select" name="adults">
-                                    <option>Adults</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
+                                <select class="awe-select" name="city">
+                                    <option>City</option>
+                                    @foreach($cities as $rs)
+                                    <option value="{{$rs->city}}">{{$rs->city}}</option>
+                                    @endforeach
                                 </select>
-                                <select class="awe-select" name="children">
-                                    <option>Children</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
+                                <input type="text" name="check_in" class="awe-calendar from" placeholder="Check in">
+                                <input type="text" name="check_out" class="awe-calendar to" placeholder="Check out">
+
+                                <select class="awe-select" name="people">
+                                    <option>Beds</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
                                 </select>
                                 <div class="vailability-submit">
-                                    <button class="awe-btn awe-btn-13">FIND THE BEST RATE</button>
+                                    <button type="submit" class="awe-btn awe-btn-13">FIND</button>
                                 </div>
                             </div>
                         </form>
