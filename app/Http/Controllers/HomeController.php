@@ -26,6 +26,10 @@ class HomeController extends Controller
     public static function categoryList(){
         return Category::where('parent_id', 0)->with('child')->get();
     }
+    public static function get_all_hotel_category_id(){
+        $ids=Hotel::select('category_id')->distinct()->get()->toArray();
+        return $ids;
+    }
 
     public function index()
     {
@@ -88,7 +92,7 @@ class HomeController extends Controller
     }
     public function rooms($id){
         $room_list=Room::all()->where('hotel_id',$id);
-        $hotel=Hotel::find($id);
+        $hotel=Hotel::with('category')->find($id);
         //print_r($room_list);
         //exit();
         $setting=Setting::first();

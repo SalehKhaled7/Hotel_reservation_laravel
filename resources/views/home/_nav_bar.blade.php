@@ -1,6 +1,7 @@
 <!-- HEADER LOGO & MENU -->
 @php
-    $parentCategories = \App\Http\Controllers\HomeController::categoryList()
+    $parentCategories = \App\Http\Controllers\HomeController::categoryList();
+    $hotel_category_id_list = \App\Http\Controllers\HomeController::get_all_hotel_category_id();
 @endphp
 <div class="header_content" id="header_content">
 
@@ -22,7 +23,7 @@
                     <ul class="sub-menu">
                         @foreach($parentCategories as $rs)
                         <li>
-                            <a @if(!count($rs->child)) href="{{route('get_hotels_via_category',['category_id'=>$rs->id])}}" @endif >{{$rs->title}} @if(count($rs->child))<span class="fa fa-caret-right"></span> @endif</a>
+                            <a @if(!in_array($rs->id,$hotel_category_id_list)) href="{{route('get_hotels_via_category',['category_id'=>$rs->id])}}" @endif >{{$rs->title}} @if(count($rs->child))<span class="fa fa-caret-right"></span> @endif</a>
 
                                 @if(count($rs->child))
                                     @include('home._category_tree',['child'=>$rs->child])

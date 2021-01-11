@@ -33,7 +33,7 @@
                     <div class="text">
                         <h2><a href="#">{{$rs->title}}</a></h2>
                         <span class="price">Start form <span class="amout">$120</span> per day</span>
-                        <p>{!! $rs->details  !!}</p>
+                        <p>{{$rs->details}}</p>
                         <ul>
                             <li>{{$rs->star}} Star</li>
                             <li>{{$rs->city}}</li>

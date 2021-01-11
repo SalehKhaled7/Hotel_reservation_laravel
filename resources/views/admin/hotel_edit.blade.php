@@ -92,12 +92,8 @@
                             <div class="form-group row">
                                 <label  class="col-sm-3 col-form-label">Details</label>
                                 <div class="col-sm-9">
-                                    <textarea id="summernote" class="form-control" name="details" >{{$data->details}}</textarea>
-                                    <script>
-                                        $(document).ready(function() {
-                                            $('#summernote').summernote();
-                                        });
-                                    </script>
+                                    <textarea rows="5" class="form-control" name="details" >{{$data->details}}</textarea>
+
                                 </div>
                             </div>
                             <div class="form-group row">

@@ -5,13 +5,13 @@
 @section('keywords',$setting->keywords)
 @section('content')
     <!-- SUB BANNER -->
-    <section class="section-sub-banner bg-9">
+    <section class="section-sub-banner" style="background-image:url('{{asset('assets')}}/images/hotels/{{$hotel->image}}')">
         <div class="awe-overlay"></div>
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-center">
                     <h2>{{$hotel->title}} Rooms</h2>
-                    <a href="{{route('home')}}">{{$setting->title}}</a> > <a href="{{route('room_list',['id'=>$hotel->id])}}">{{$hotel->title}}</a> > <a>{{$room->title}}</a>
+                    <span style="color: white"><a style="color: white" href="{{route('home')}}">{{$setting->title}}</a>  >  <a style="color: white" href="{{route('room_list',['id'=>$hotel->id])}}">{{$hotel->title}}</a>  >  <a style="color: white">{{$room->title}}</a></span>
                 </div>
             </div>
 

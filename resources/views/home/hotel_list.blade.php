@@ -34,7 +34,7 @@
                     <div class="text">
                         <h2><a href="{{route('room_list',['id'=>$rs->id])}}">{{$rs->title}}</a></h2>
                         <span class="price">Start form <span class="amout">$120</span> per day</span>
-                        <p>{!! $rs->details  !!}</p>
+                        <p>{{$rs->details }} </p>
                         <ul>
                             <li>Max: 4 Person(s)</li>
                             <li>Size: 35 m2 / 376 ft2</li>
