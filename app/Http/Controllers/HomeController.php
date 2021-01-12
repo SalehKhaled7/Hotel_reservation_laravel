@@ -7,6 +7,7 @@ use App\Models\FrontSetting;
 use App\Models\Hotel;
 use App\Models\Image;
 use App\Models\Message;
+use App\Models\Review;
 use App\Models\Room;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -93,13 +94,15 @@ class HomeController extends Controller
     public function rooms($id){
         $room_list=Room::all()->where('hotel_id',$id);
         $hotel=Hotel::with('category')->find($id);
+        $reviews=Review::all()->where('hotel_id',$id);
         //print_r($room_list);
         //exit();
         $setting=Setting::first();
         $context = [
             'room_list'=>$room_list,
             'setting'=>$setting,
-            'hotel'=>$hotel
+            'hotel'=>$hotel,
+            'reviews'=>$reviews
 
         ];
         return view('home.rooms',$context);
@@ -146,6 +149,19 @@ class HomeController extends Controller
             'setting'=>$setting,
         ];
         return view('home.hotels',$data);
+    }
+
+    public function add_review(Request $request , $id){
+        $data=new Review;
+        $data->user_id =Auth::id();
+        $data->hotel_id = $id;
+        $data->rate = 5;
+        $data->subject = $request->input('subject');
+        $data->review = $request->input('review');
+        $data->ip=$request->ip();
+        $data->save();
+        return back()->with('success','Message send successfully . ');
+
     }
 
     public function login(){ // return dashboard > login page

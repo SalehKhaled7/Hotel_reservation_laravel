@@ -26,6 +26,9 @@
                 <div class="nav-item @if(Request::url() === route('messages')) active @endif ">
                     <a href="{{route('messages')}}"><i class="ik ik-message-square @if(Request::url() === route('messages')) text-orange @endif"></i><span>Messages</span></a>
                 </div>
+                <div class="nav-item @if(Request::url() === route('reviews')) active @endif ">
+                    <a href="{{route('reviews')}}"><i class="ik ik-star @if(Request::url() === route('reviews')) text-orange @endif"></i><span>Reviews</span></a>
+                </div>
 
                 <div class="nav-lavel">Other</div>
                 <div class="nav-item @if(Request::url() === route('admin_setting')) active @endif ">

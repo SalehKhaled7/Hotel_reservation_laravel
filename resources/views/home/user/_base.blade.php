@@ -13,7 +13,7 @@
             <div class="container">
                 <div class="text text-center">
                     <h2>@yield('title_user')</h2>
-                    <a href="{{route('profile')}}">User</a> > @section('path') @show
+                    <a href="{{route('profile')}}">USER</a> > @section('path') @show
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
                                 <div class="col-md-3">
                                     <ul class="room-detail_tab-header">
                                         <li @if(Request::url() === route('profile') ) class="active" @endif ><a href="{{route('profile')}}"  >Profile</a></li>
-                                        <li ><a href="#amenities" data-toggle="tab">amenities</a></li>
+                                        <li @if(Request::url() === route('user_reviews') ) class="active" @endif ><a href="{{route('user_reviews')}}" >Reviews</a></li>
                                         <li><a href="#package" data-toggle="tab">PACKAGE</a></li>
                                         <li><a href="#rates" data-toggle="tab">RATES</a></li>
                                         <li><a href="#calendar" data-toggle="tab">Calendar</a></li>

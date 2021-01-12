@@ -22,9 +22,7 @@
     <!-- ROOM -->
     <section class="section-room bg-white">
         <div class="container">
-
             <div class="room-wrap-6">
-
                 <!-- ITEM -->
                 @if(count($hotel_list) > 0 )
                 @foreach($hotel_list as $rs)

@@ -1,5 +1,5 @@
 @extends('layouts.admin_base')
-@section('title','Messages')
+@section('title','Reviews')
 @section('content')
     <div class="main-content">
         <div class="container-fluid">
@@ -8,9 +8,9 @@
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-message-square bg-green"></i>
+                            <i class="ik ik-star bg-yellow"></i>
                             <div class="d-inline">
-                                <h5>Messages</h5>
+                                <h5>Reviews</h5>
                                 <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                             </div>
                         </div>
@@ -22,7 +22,7 @@
                                     <a href="{{route('admin')}}"><i class="ik ik-home"></i></a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('messages')}}">Messages</a>
+                                    <a href="{{route('reviews')}}">Reviews</a>
                                 </li>
                             </ol>
                         </nav>
@@ -36,7 +36,7 @@
                 @include('flash_message')
                 <div class="card table-card">
                     <div class="card-header">
-                        <h3>Message list</h3>
+                        <h3>Review list</h3>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="ik ik-chevron-left action-toggle"></i></li>
@@ -45,7 +45,7 @@
                             </ul>
                         </div>
                     </div>
-                    @if($messageList->isNotEmpty())
+                    @if($reviews->isNotEmpty())
 
                         <div class="card-block">
 
@@ -55,30 +55,37 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>From</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
+                                        <th>User id</th>
+                                        <th>User ip</th>
+                                        <th>Hotel id</th>
+                                        <th>Rate</th>
                                         <th>Subject</th>
-                                        <th>Messagees</th>
+                                        <th>Review</th>
+                                        <th>Created at</th>
                                         <th>Status</th>
-                                        <th>Note</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($messageList as $rs)
+                                    @foreach($reviews as $rs)
                                         <tr>
                                             <td>{{$rs-> id}}</td>
-                                            <td>{{$rs-> name}}</td>
-                                            <td>{{$rs->email}}</td>
-                                            <td>{{$rs-> phone}}</td>
+                                            <td>{{$rs-> user_id}}</td>
+                                            <td>{{$rs-> ip}}</td>
+                                            <td>{{$rs->hotel_id}}</td>
+                                            <td>{{$rs-> rate}}</td>
                                             <td>{{$rs-> subject}}</td>
-                                            <td>{{$rs-> message}}</td>
-                                            <td ><span @if($rs-> status == 'new') class="badge-pill bg-red text-white text-capitalize" @endif>{{$rs-> status}}</span >  </td>
-                                            <td>{{$rs-> note}}</td>
+                                            <td>{{$rs-> review}}</td>
+                                            <td>{{$rs-> created_at}}</td>
+                                            <td>@if($rs -> status == 'true')
+                                                    <div class="p-status bg-green"></div>
+                                                @else
+                                                    <div class="p-status bg-red"></div>
+                                                @endif
+                                            </td>
                                             <td>
-                                                <a href="{{ route( 'admin_message_edit',['id'=>$rs->id ] ) }}" ><i class="ik ik-edit f-20 mr-15 text-green"></i></a>
-                                                <a href="{{ route( 'admin_message_delete',['id'=>$rs->id ]) }}" onclick="return confirm(' delete message :{{$rs->subject}} from {{$rs->name}}  !')"><i class="ik ik-trash-2 f-20 text-red"></i></a>
+                                                <a href="{{ route( 'admin_review_edit',['id'=>$rs->id ] ) }}" ><i class="ik ik-edit f-20 mr-15 text-green"></i></a>
+                                                <a href="{{ route( 'admin_review_delete',['id'=>$rs->id ]) }}" onclick="return confirm(' delete review: {{$rs->review}}  !')"><i class="ik ik-trash-2 f-20 text-red"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -91,7 +98,7 @@
                         <div class="card-block">
                             <div class="row">
                                 <div class="col-lg-12 text-center">
-                                    <h1> No messages</h1>
+                                    <h1> No reviews</h1>
                                 </div>
 
                             </div>

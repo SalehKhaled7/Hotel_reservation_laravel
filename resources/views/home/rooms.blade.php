@@ -178,109 +178,46 @@
                             <div class="row">
                                 <!-- COMMENT RESPOND -->
                                 <div class="comment-respond" style="border-top: none; padding-top: 0;margin-top: 0">
-                                    <h3 class="comment-reply-title">LEAVE A COMMENT</h3>
-                                    <form action="#" method="post" class="comment-form">
-                                        <div class="row">
 
-                                                <div class="col-sm-5">
-                                                    <input type="text"  class="field-text"  placeholder="Subject">
-                                                </div>
 
-                                            <div class="col-sm-12">
-                                                <textarea placeholder="Your comment"  class="field-textarea" rows="4" ></textarea>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <button class="awe-btn awe-btn-14">SUBMIT COMMENT</button>
-                                            </div>
-                                        </div>
-                                    </form>
+
+                                    @livewire('review',['id' => $hotel->id])
+                                    @livewireScripts
+
                                 </div>
                                 <!-- END COMMENT RESPOND -->
                                 <!-- COMMENT -->
                                 <div id="comments">
-                                    <h4 class="comment-title">COMMENT (3)</h4>
+                                    <h4 class="comment-title">COMMENT ({{count($reviews)}})</h4>
 
                                     <ul class="commentlist">
+                                        @if(count($reviews)>0)
+                                        @foreach($reviews as $rs)
                                         <li>
                                             <div class="comment-body">
 
                                                 <a class="comment-avatar"><img src="images/avatar/img-1.jpg" alt=""></a>
 
-                                                <h4 class="comment-subject">Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.</p>
+                                                <h4 class="comment-subject">{{$rs->subject}}</h4>
+                                                <p>{{$rs->review}}</p>
 
                                                 <span class="comment-meta">
-                                                    <a href="#">Jessica Anba</a> - 20PM 15 Oct 2015
+                                                    <a href="#">{{$rs->user->name}}</a> - {{$rs->created_at}}
                                                 </span>
 
-                                                <div class="action">
-                                                    <a href="#" class="awe-btn awe-btn-14">Edit</a>
-                                                    <a href="#" class="awe-btn awe-btn-14">Reply</a>
-                                                </div>
 
                                             </div>
                                         </li>
+                                        @endforeach
+                                        @else
+                                            <li>
+                                                <div class="comment-body">
 
-                                        <li>
-                                            <div class="comment-body">
+                                                    <h4 class="comment-subject">No comments </h4>
 
-                                                <a class="comment-avatar"><img src="images/avatar/img-2.jpg" alt=""></a>
-
-                                                <h4 class="comment-subject">Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.</p>
-
-                                                <span class="comment-meta">
-                                                    <a href="#">Anna Molly</a> - 20PM 15 Oct 2015
-                                                </span>
-
-                                                <div class="action">
-                                                    <a href="#" class="awe-btn awe-btn-14">Edit</a>
-                                                    <a href="#" class="awe-btn awe-btn-14">Reply</a>
                                                 </div>
-
-                                                <ul class="children">
-                                                    <li>
-                                                        <div class="comment-body">
-
-                                                            <a class="comment-avatar"><img src="images/avatar/img-3.jpg" alt=""></a>
-
-                                                            <h4 class="comment-subject">Lorem Ipsum is simply dummy text of the printing</h4>
-                                                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College.</p>
-
-                                                            <span class="comment-meta">
-                                                                <a href="#">Jessica Anba</a> - 20PM 15 Oct 2015
-                                                            </span>
-
-                                                            <div class="action">
-                                                                <a href="#" class="awe-btn awe-btn-14">Edit</a>
-                                                                <a href="#" class="awe-btn awe-btn-14">Reply</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-
-                                            </div>
-                                        </li>
-
-                                        <li>
-                                            <div class="comment-body">
-
-                                                <a class="comment-avatar"><img src="images/avatar/img-4.jpg" alt=""></a>
-
-                                                <h4 class="comment-subject">Lorem Ipsum is simply dummy text of the printing</h4>
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here.</p>
-
-                                                <span class="comment-meta">
-                                                    <a href="#">Tommy</a> - 20PM 15 Oct 2015
-                                                </span>
-
-                                                <div class="action">
-                                                    <a href="#" class="awe-btn awe-btn-14">Edit</a>
-                                                    <a href="#" class="awe-btn awe-btn-14">Reply</a>
-                                                </div>
-
-                                            </div>
-                                        </li>
+                                            </li>
+                                        @endif
 
                                     </ul>
                                 </div>

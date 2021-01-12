@@ -84,7 +84,7 @@
                                 <div class="col-sm-9">
 
                                     <select class="form-control select2" name="status">
-                                        <option value="true" selected >{{$data->status}}</option>
+                                        <option value="{{$data->status}}" selected >{{$data->status}}</option>
                                         <option value="true">true</option>
                                         <option value="false">false</option>
                                     </select>

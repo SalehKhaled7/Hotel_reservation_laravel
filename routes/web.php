@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FrontSettingController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,7 @@ Route::get('hotel/{id}/rooms',[HomeController::class,'rooms'])->name('room_list'
 Route::get('hotel/{hotel_id}/room/{room_id}',[HomeController::class,'rooms_detail'])->name('room_detail');
 Route::get('category/{category_id}/hotels',[HomeController::class,'get_hotels_via_category'])->name('get_hotels_via_category');
 Route::post('hotel/find',[HomeController::class,'find_hotel'])->name('find_hotel');
+Route::post('hotel/{id}/add_review',[HomeController::class,'add_review'])->name('add_review');
 
 
 
@@ -119,11 +121,23 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('show',[MessageController::class,'show'])->name('admin_messages_show');
     });
 
+    //review routes
+    Route::prefix('reviews')->group(function (){
+
+        Route::get('/',[ReviewController::class,'index'])->name('reviews');
+        Route::get('edit/{id}',[ReviewController::class,'edit'])->name('admin_review_edit');
+        Route::post('update/{id}',[ReviewController::class,'update'])->name('admin_review_update');
+        Route::get('delete/{id}',[ReviewController::class,'destroy'])->name('admin_review_delete');
+        Route::get('show',[ReviewController::class,'show'])->name('admin_review_show');
+    });
+
 
 });
 
 Route::middleware('auth')->prefix('_user')->namespace('_user')->group(function (){
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('profile');
+    Route::get('reviews', [\App\Http\Controllers\UserController::class, 'reviews'])->name('user_reviews');
+    Route::get('reviews/{id}/delete', [\App\Http\Controllers\UserController::class, 'delete_review'])->name('user_delete_review');
 
 });
 Route::get('login',[HomeController::class,'user_login'])->name('user_login'); // login

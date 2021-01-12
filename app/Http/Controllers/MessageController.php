@@ -81,7 +81,7 @@ class MessageController extends Controller
         $data =Message::find($id);
         $data->note = $request->input('note');
         $data->save();
-        return redirect(route('messages'));
+        return redirect(route('messages'))->with('success','message updated successfully . ');
     }
 
     /**

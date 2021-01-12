@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -15,6 +16,17 @@ class UserController extends Controller
     public function index()
     {
         return view('home.user.user_profile');
+    }
+    public  function reviews(){
+        $reviews = Review::all()->where('user_id',Auth::id());
+        return view('home.user.user_reviews',['reviews'=>$reviews]);
+    }
+
+    public function delete_review($id){
+        $review = Review::find($id);
+        $review->delete();
+        //DB::table('messages')->where('id','=',$id)->delete();
+        return back()->with('info','Message deleted successfully . ');
     }
 
     /**
