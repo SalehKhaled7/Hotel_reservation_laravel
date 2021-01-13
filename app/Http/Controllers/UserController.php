@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Reservation;
 use App\Models\Review;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,6 +29,37 @@ class UserController extends Controller
         //DB::table('messages')->where('id','=',$id)->delete();
         return back()->with('info','Message deleted successfully . ');
     }
+
+    #user reservation start
+    public  function reservations(){
+        $reservations = Reservation::all()->where('user_id',Auth::id());
+        return view('home.user.user_reservations',['reservations'=>$reservations]);
+    }
+    public function edit_reservation($id){
+        $reservation=Reservation::find($id);
+        return view('home.user.user_reservations_edit',['reservation'=>$reservation]);
+
+    }
+
+    public function update_reservation(Request $request,$id){
+        $reservation=Reservation::find($id);
+        $reservation->check_in=$request->input('check_in');
+        $reservation->check_out=$request->input('check_out');
+        $reservation->adult = $request->input('adult');
+        $reservation->child = $request->input('child');
+        $reservation->save();
+
+        return redirect(route('user_reservations'))->with('success','reservations updated successfully . ');
+
+    }
+
+    public function delete_reservation($id){
+        $data = Reservation::find($id);
+        $data->delete();
+
+        return back()->with('info','reservations canceled successfully . ');
+    }
+    #user reservation end
 
     /**
      * Show the form for creating a new resource.

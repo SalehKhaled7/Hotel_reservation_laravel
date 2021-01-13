@@ -1,5 +1,5 @@
 @extends('layouts.admin_base')
-@section('title','Reviews')
+@section('title','Reservations')
 @section('content')
     <div class="main-content">
         <div class="container-fluid">
@@ -8,9 +8,9 @@
                 <div class="row align-items-end">
                     <div class="col-lg-8">
                         <div class="page-header-title">
-                            <i class="ik ik-star bg-yellow"></i>
+                            <i class="ik ik-book bg-dark"></i>
                             <div class="d-inline">
-                                <h5>Reviews</h5>
+                                <h5>Reservations</h5>
                                 <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
                             </div>
                         </div>
@@ -22,8 +22,9 @@
                                     <a href="{{route('admin')}}"><i class="ik ik-home"></i></a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="{{route('reviews')}}">Reviews</a>
+                                    <a href="{{route('admin_reservations')}}">Reservations</a>
                                 </li>
+
                             </ol>
                         </nav>
                     </div>
@@ -36,7 +37,7 @@
                 @include('flash_message')
                 <div class="card table-card">
                     <div class="card-header">
-                        <h3>Review list</h3>
+                        <h3>Reservation list</h3>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
                                 <li><i class="ik ik-chevron-left action-toggle"></i></li>
@@ -45,38 +46,35 @@
                             </ul>
                         </div>
                     </div>
-                    @if($reviews->isNotEmpty())
-
+                    @if($reservations->isNotEmpty())
                         <div class="card-block">
-
                             <div class="table-responsive">
-
                                 <table class="table table-hover mb-0">
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>User id</th>
-                                        <th>User ip</th>
                                         <th>Hotel Name</th>
-                                        <th>Rate</th>
-                                        <th>Subject</th>
-                                        <th>Review</th>
-                                        <th>Created at</th>
+                                        <th>Room id</th>
+                                        <th>User id</th>
+                                        <th>Check in</th>
+                                        <th>Check out</th>
+                                        <th>Adult Number</th>
+                                        <th>Children Number</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($reviews as $rs)
+                                    @foreach($reservations as $rs)
                                         <tr>
                                             <td>{{$rs-> id}}</td>
+                                            <td>{{$rs-> hotel->title}}</td>
+                                            <td>{{$rs-> room_id}}</td>
                                             <td>{{$rs-> user_id}}</td>
-                                            <td>{{$rs-> ip}}</td>
-                                            <td>{{$rs->hotel->title}}</td>
-                                            <td>{{$rs-> rate}}</td>
-                                            <td>{{$rs-> subject}}</td>
-                                            <td>{{$rs-> review}}</td>
-                                            <td>{{$rs-> created_at}}</td>
+                                            <td>{{$rs-> check_in}}</td>
+                                            <td>{{$rs-> check_out}}</td>
+                                            <td>{{$rs-> adult}}</td>
+                                            <td>{{$rs-> child}}</td>
                                             <td>@if($rs -> status == 'true')
                                                     <div class="p-status bg-green"></div>
                                                 @else
@@ -84,8 +82,8 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ route( 'admin_review_edit',['id'=>$rs->id ] ) }}" ><i class="ik ik-edit f-20 mr-15 text-green"></i></a>
-                                                <a href="{{ route( 'admin_review_delete',['id'=>$rs->id ]) }}" onclick="return confirm(' delete review: {{$rs->review}}  !')"><i class="ik ik-trash-2 f-20 text-red"></i></a>
+                                                <a href="{{ route( 'admin_reservation_edit',['id'=>$rs->id ] ) }}"><i class="ik ik-edit f-20 mr-15 text-green"></i></a>
+                                                <a href="{{ route( 'admin_reservation_delete',['id'=>$rs->id] ) }}" onclick="return confirm('{{$rs->id}} reservation will be deleted permanently continue !')"><i class="ik ik-trash-2 f-20 text-red"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -98,7 +96,7 @@
                         <div class="card-block">
                             <div class="row">
                                 <div class="col-lg-12 text-center">
-                                    <h1> No reviews</h1>
+                                    <h1> No reservation yet</h1>
                                 </div>
 
                             </div>
@@ -115,4 +113,3 @@
 @section('footerJs')
 
 @endsection
-

@@ -18,6 +18,9 @@
           type='text/css'>
 
     <!-- CSS LIBRARY -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/dashboard/dist/css/theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/dashboard/plugins/icon-kit/dist/css/iconkit.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/dashboard/plugins/ionicons/dist/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/lib/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/lib/font-lotusicon.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/lib/bootstrap.min.css">

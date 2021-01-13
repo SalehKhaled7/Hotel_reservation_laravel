@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\FrontSettingController;
+use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
@@ -40,7 +41,12 @@ Route::get('hotel/{id}/rooms',[HomeController::class,'rooms'])->name('room_list'
 Route::get('hotel/{hotel_id}/room/{room_id}',[HomeController::class,'rooms_detail'])->name('room_detail');
 Route::get('category/{category_id}/hotels',[HomeController::class,'get_hotels_via_category'])->name('get_hotels_via_category');
 Route::post('hotel/find',[HomeController::class,'find_hotel'])->name('find_hotel');
+
+//user reviews
 Route::post('hotel/{id}/add_review',[HomeController::class,'add_review'])->name('add_review');
+
+//user reservations
+Route::post('hotel/{hotel_id}/room/{room_id}/add_reservation',[HomeController::class,'add_reservation'])->name('add_reservation');
 
 
 
@@ -131,13 +137,37 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('show',[ReviewController::class,'show'])->name('admin_review_show');
     });
 
+    //review routes
+    Route::prefix('reservation')->group(function (){
+
+        Route::get('/',[ReservationController::class,'index'])->name('admin_reservations');
+        Route::get('edit/{id}',[ReservationController::class,'edit'])->name('admin_reservation_edit');
+        Route::post('update/{id}',[ReservationController::class,'update'])->name('admin_reservation_update');
+        Route::get('delete/{id}',[ReservationController::class,'destroy'])->name('admin_reservation_delete');
+        Route::get('show',[ReservationController::class,'show'])->name('admin_reservation_show');
+    });
+
 
 });
 
 Route::middleware('auth')->prefix('_user')->namespace('_user')->group(function (){
     Route::get('/', [\App\Http\Controllers\UserController::class, 'index'])->name('profile');
-    Route::get('reviews', [\App\Http\Controllers\UserController::class, 'reviews'])->name('user_reviews');
-    Route::get('reviews/{id}/delete', [\App\Http\Controllers\UserController::class, 'delete_review'])->name('user_delete_review');
+
+    //user reviews
+    Route::prefix('reviews')->group(function (){
+        Route::get('/', [\App\Http\Controllers\UserController::class, 'reviews'])->name('user_reviews');
+        Route::get('{id}/delete', [\App\Http\Controllers\UserController::class, 'delete_review'])->name('user_delete_review');
+
+    });
+    //user reservations
+    Route::prefix('reservations')->group(function (){
+        Route::get('/', [\App\Http\Controllers\UserController::class, 'reservations'])->name('user_reservations');
+        Route::get('{id}/edit_reservation',[\App\Http\Controllers\UserController::class,'edit_reservation'])->name('user_edit_reservation');
+        Route::post('{id}/update_reservation',[\App\Http\Controllers\UserController::class,'update_reservation'])->name('user_update_reservation');
+        Route::get('{id}/delete_reservation',[\App\Http\Controllers\UserController::class,'delete_reservation'])->name('user_delete_reservation');
+
+
+    });
 
 });
 Route::get('login',[HomeController::class,'user_login'])->name('user_login'); // login

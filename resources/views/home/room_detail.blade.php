@@ -70,6 +70,7 @@
 
                         <!-- FORM BOOK -->
                         <div class="room-detail_book">
+                            @include('flash_message')
 
                             <div class="room-detail_total">
                                 <img src="images/icon-logo.png" alt="" class="icon-logo">
@@ -82,25 +83,33 @@
                             </div>
 
                             <div class="room-detail_form">
+                                <form action="{{route('add_reservation',['hotel_id'=>$hotel->id,'room_id'=>$room->id])}}" method="post">
+                                @csrf
                                 <label>Arrive</label>
-                                <input type="text" class="awe-calendar from" placeholder="Arrive Date">
+                                <input type="text" class="awe-calendar from" placeholder="Arrive Date" name="check_in" >
                                 <label>Depature</label>
-                                <input type="text" class="awe-calendar to" placeholder="Departure Date">
+                                <input type="text" class="awe-calendar to" placeholder="Departure Date" name="check_out">
                                 <label>Adult</label>
-                                <select class="awe-select">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option selected>3</option>
-                                    <option>4</option>
+                                <select class="awe-select" name="adult">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
                                 </select>
                                 <label>Chirld</label>
-                                <select class="awe-select">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option selected>3</option>
-                                    <option>4</option>
+                                <select class="awe-select" name="child">
+                                    <option value="0" selected>0</option>
+                                    <option value="1" >1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
                                 </select>
-                                <button class="awe-btn awe-btn-13">Book Now</button>
+                                    @auth
+                                <button type="submit" class="awe-btn awe-btn-13">Book Now</button>
+                                    @else
+                                       <a href="{{route('user_login')}}"><h3>login to account</h3> </a>
+                                    @endauth
+                                </form>
                             </div>
 
                         </div>

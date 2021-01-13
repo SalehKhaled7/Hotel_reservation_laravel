@@ -7,6 +7,7 @@ use App\Models\FrontSetting;
 use App\Models\Hotel;
 use App\Models\Image;
 use App\Models\Message;
+use App\Models\Reservation;
 use App\Models\Review;
 use App\Models\Room;
 use App\Models\Setting;
@@ -163,6 +164,34 @@ class HomeController extends Controller
         return back()->with('success','Message send successfully . ');
 
     }
+
+    public function add_reservation(Request $request ,$hotel_id, $room_id){
+        $data=new Reservation;
+        $data->user_id =Auth::id();
+        $data->room_id = $room_id;
+        $data->hotel_id = $hotel_id;
+
+        $check_in =$request->input('check_in');
+        $month =substr($check_in,0,2);
+        $day =substr($check_in,3,2);
+        $year =substr($check_in,6,4);
+
+        $data->check_in = $year.'-'.$month.'-'.$day;
+
+        $check_out = $request->input('check_out');
+        $month =substr($check_out,0,2);
+        $day =substr($check_out,3,2);
+        $year =substr($check_out,6,4);
+
+        $data->check_out = $year.'-'.$month.'-'.$day;
+
+        $data->adult = $request->input('adult');
+        $data->child = $request->input('child');
+        $data->save();
+        return back()->with('success','Reservation done successfully . ');
+
+    }
+
 
     public function login(){ // return dashboard > login page
         return view('admin.login');

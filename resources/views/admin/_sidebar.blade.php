@@ -17,11 +17,14 @@
                 <div class="nav-item @if(Request::url() === route('admin') ) active @endif  ">
                     <a href="{{ route('admin') }}"><i class="ik ik-bar-chart-2 @if(Request::url() === route('admin') ) text-orange @endif "></i><span>Dashboard</span></a>
                 </div>
-                <div class="nav-item @if(Request::url() === route('admin_category')) active @endif ">
+                <div class="nav-item @if(Request::url() === route('admin_category'))  active @endif "  >
                     <a href="{{route('admin_category')}}"><i class="ik ik-grid @if(Request::url() === route('admin_category')) text-orange @endif"></i><span>Categories</span></a>
                 </div>
                 <div class="nav-item @if(Request::url() === route('hotels')) active @endif ">
                     <a href="{{route('hotels')}}"><i class="ik ik-home @if(Request::url() === route('hotels')) text-orange @endif"></i><span>Hotels</span></a>
+                </div>
+                <div class="nav-item @if(Request::url() === route('admin_reservations')) active @endif ">
+                    <a href="{{route('admin_reservations')}}"><i class="ik ik-book @if(Request::url() === route('admin_reservations')) text-orange @endif"></i><span>Reservations</span></a>
                 </div>
                 <div class="nav-item @if(Request::url() === route('messages')) active @endif ">
                     <a href="{{route('messages')}}"><i class="ik ik-message-square @if(Request::url() === route('messages')) text-orange @endif"></i><span>Messages</span></a>

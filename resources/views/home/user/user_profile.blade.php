@@ -1,5 +1,5 @@
 @extends('home.user._base')
-@section('title_user','profile')
+@section('title','MY PROFILE')
 @section('path')
     <a>Profile</a>
 @endsection

@@ -2,7 +2,7 @@
     $setting=\App\Http\Controllers\HomeController::getSetting()
 @endphp
 @extends('layouts.base')
-@section('title','profile')
+
 @section('description',' ')
 @section('keywords',' ')
 @section('content')
@@ -39,6 +39,7 @@
                                     <ul class="room-detail_tab-header">
                                         <li @if(Request::url() === route('profile') ) class="active" @endif ><a href="{{route('profile')}}"  >Profile</a></li>
                                         <li @if(Request::url() === route('user_reviews') ) class="active" @endif ><a href="{{route('user_reviews')}}" >Reviews</a></li>
+                                        <li @if(Request::url() === route('user_reservations') ) class="active" @endif ><a href="{{route('user_reservations')}}" >Reservations</a></li>
                                         <li><a href="#package" data-toggle="tab">PACKAGE</a></li>
                                         <li><a href="#rates" data-toggle="tab">RATES</a></li>
                                         <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
