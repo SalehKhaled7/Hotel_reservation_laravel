@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\FrontSetting;
 use App\Models\Hotel;
 use App\Models\Image;
@@ -61,7 +62,12 @@ class HomeController extends Controller
 
     public function faq(){
         $setting=Setting::first();
-        return view('home.faq',['setting'=>$setting]);
+        $faqs = Faq::all()->where('status','true')->sortBy('position');
+        $data=[
+            'faqs'=>$faqs,
+            'setting'=>$setting,
+        ];
+        return view('home.faq',$data);
     }
 
     public function contact(){

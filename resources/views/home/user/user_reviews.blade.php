@@ -35,7 +35,7 @@
                         <p class="price"><span class="amout">{{$rs->created_at}}</span></p>
                     </td>
                     <td>
-                        <p class="price"><span class="amout"><a href="{{route('user_delete_review',['id'=>$rs->id])}}" onclick="return confirm(' your review on: {{$rs->hotel->title}}  Hotel will be deleted, conform !')"> <i class="ik ik-trash-2 f-20 mr-10 text-red"></i></a></span></p>
+                        <p class="price"><span class="amout"><a href="{{route('user_delete_review',['id'=>$rs->id])}}" onclick="return confirm(' your review on: {{$rs->hotel->title}}  Hotel will be deleted, conform !')"> <i class="ik ik-x " style="color: #ff8428;font-size: 1.20em"></i></a></span></p>
                     </td>
                 </tr>
                 @endforeach

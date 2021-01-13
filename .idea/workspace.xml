@@ -10,24 +10,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="update 1.1">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/reservations/reservation_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/reservations/reservations.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user/user_reservations.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user/user_reservations_edit.blade.php" afterDir="false" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="admin/user reservations CRUD">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/faqs/faq_add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/faqs/faq_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/faqs/faqs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/311a9e40-dd61-4923-991c-862045e582f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/311a9e40-dd61-4923-991c-862045e582f2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Hotel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Hotel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/reviews/reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reviews/reviews.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/_base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/_base.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/user_profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/faq.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/faq.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user/user_reservations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/user_reservations.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/user/user_reviews.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/user_reviews.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,18 +203,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home\user" />
-      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home" />
-      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\layouts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home" />
       <recent name="C:\xampp\htdocs\Laravel\project2\storage\app\public" />
       <recent name="C:\xampp\htdocs\Laravel\project2\storage\app" />
       <recent name="C:\xampp\htdocs\Laravel\project2\storage" />
       <recent name="C:\xampp\htdocs\Laravel\project2\storage\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home\user" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -270,7 +266,9 @@
       <workItem from="1610294675162" duration="10766000" />
       <workItem from="1610341351094" duration="8135000" />
       <workItem from="1610391492618" duration="19523000" />
-      <workItem from="1610483687821" duration="17231000" />
+      <workItem from="1610483687821" duration="17389000" />
+      <workItem from="1610544777669" duration="2671000" />
+      <workItem from="1610549559503" duration="9145000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -503,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610412060177</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="admin/user reservations CRUD">
+      <created>1610501170676</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1610501170676</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +530,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="category update/edit added" />
     <MESSAGE value="hotel model added. admin now can add,update,delete hotels" />
     <MESSAGE value="rich text editor added for detail fields in hotel add/edit" />
     <MESSAGE value="room model added" />
@@ -550,7 +554,8 @@
     <MESSAGE value="bug fix in hotel add/edit , comment and overview section added to hotel detail pages" />
     <MESSAGE value="hotel reviews , user reviews , admin reviews CRUD added" />
     <MESSAGE value="update 1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 1.1" />
+    <MESSAGE value="admin/user reservations CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin/user reservations CRUD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -561,10 +566,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608927564643" />
-    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610495232978">
+    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610552700371">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610495232978" />
+    <state x="1160" y="255" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610552700371" />
     <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1607019545512">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -593,10 +598,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609980531015" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1610495410593">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1610553761521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610495410593" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610553761521" />
     <state x="721" y="222" key="RollbackChangesDialog" timestamp="1608839940481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -605,10 +610,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610412068411">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610501172994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610412068411" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610501172994" />
     <state x="540" y="174" key="com.intellij.database.dbimport.ImportDialog" timestamp="1610125673960">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

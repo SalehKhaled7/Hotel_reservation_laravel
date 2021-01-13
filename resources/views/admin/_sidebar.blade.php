@@ -34,6 +34,9 @@
                 </div>
 
                 <div class="nav-lavel">Other</div>
+                <div class="nav-item @if(Request::url() === route('admin_faqs')) active @endif ">
+                    <a href="{{route('admin_faqs')}}"><i class="ik ik-help-circle @if(Request::url() === route('admin_faqs')) text-orange @endif"></i><span>FAQS</span></a>
+                </div>
                 <div class="nav-item @if(Request::url() === route('admin_setting')) active @endif ">
                     <a href="{{route('admin_setting')}}"><i class="ik ik-settings @if(Request::url() === route('admin_setting')) text-orange @endif"></i><span>Settings</span></a>
                 </div>

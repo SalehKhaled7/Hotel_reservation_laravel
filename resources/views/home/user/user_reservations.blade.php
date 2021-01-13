@@ -45,9 +45,9 @@
                         <td>
                             <p class="price">
                                 <span class="amout">
-                                    <a href="{{route('room_detail',['hotel_id'=>$rs->hotel->id,'room_id'=>$rs->room_id])}}"><i class="ik ik-eye f-20 mr-10 text-blue"></i></a>
-                                    <a href="{{route('user_edit_reservation',['id'=>$rs->id])}}"><i class="ik ik-edit f-20 mr-10 text-green"> </i></a>
-                                    <a href="{{route('user_delete_reservation',['id'=>$rs->id])}}" onclick="return confirm(' Room with id:{{$rs->room_id}} reservation will be canceled conform !')"> <i class="ik ik-x f-20 mr-10 text-red"></i></a>
+                                    <a href="{{route('room_detail',['hotel_id'=>$rs->hotel->id,'room_id'=>$rs->room_id])}}"><i class="ik ik-eye"  style="color: #b78c44;font-size: 1.30em"></i></a>
+                                    <a href="{{route('user_edit_reservation',['id'=>$rs->id])}}"><i class="ik ik-edit"  style="color: #4f4a3a;font-size: 1.30em"> </i></a>
+                                    <a href="{{route('user_delete_reservation',['id'=>$rs->id])}}" onclick="return confirm(' Room with id:{{$rs->room_id}} reservation will be canceled conform !')"> <i class="ik ik-x " style="color: #ec6b1a;font-size: 1.20em"></i></a>
                                 </span>
                             </p>
                         </td>

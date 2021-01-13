@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\FrontSettingController;
 use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\ReviewController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
@@ -137,7 +138,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::get('show',[ReviewController::class,'show'])->name('admin_review_show');
     });
 
-    //review routes
+    //reservation routes
     Route::prefix('reservation')->group(function (){
 
         Route::get('/',[ReservationController::class,'index'])->name('admin_reservations');
@@ -145,6 +146,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}',[ReservationController::class,'update'])->name('admin_reservation_update');
         Route::get('delete/{id}',[ReservationController::class,'destroy'])->name('admin_reservation_delete');
         Route::get('show',[ReservationController::class,'show'])->name('admin_reservation_show');
+    });
+
+    //Faq routes
+    Route::prefix('faqs')->group(function (){
+
+        Route::get('/',[FaqController::class,'index'])->name('admin_faqs');
+        Route::get('add',[FaqController::class,'create'])->name('admin_faq_create');
+        Route::post('create',[FaqController::class,'store'])->name('admin_faq_store');
+        Route::get('edit/{id}',[FaqController::class,'edit'])->name('admin_faq_edit');
+        Route::post('update/{id}',[FaqController::class,'update'])->name('admin_faq_update');
+        Route::get('delete/{id}',[FaqController::class,'destroy'])->name('admin_faq_delete');
+        Route::get('show',[FaqController::class,'show'])->name('admin_faq_show');
     });
 
 
