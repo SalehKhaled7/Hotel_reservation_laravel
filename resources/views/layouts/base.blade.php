@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/lib/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/lib/settings.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/lib/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/star_rating.css">
     @yield('css')
 
     <!-- MAIN STYLE -->

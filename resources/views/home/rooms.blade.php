@@ -34,7 +34,23 @@
 
                     <div class="text">
                         <h2>{{$hotel->title}} HOTEL</h2>
-                        <span class="price">{{$hotel->star}} <span class="amout">star</span></span>
+                        @php
+                        $review_avg=\App\Http\Controllers\HomeController::get_review_avg($hotel->id);
+                        @endphp
+
+                        <div>
+                            <i class="fa fa-star  @if($review_avg >=   1)checked @endif" aria-hidden="true" ></i>
+                            <i class="fa fa-star  @if($review_avg >=   2)checked @endif" aria-hidden="true"></i>
+                            <i class="fa fa-star  @if($review_avg >=   3)checked @endif" aria-hidden="true"></i>
+                            <i class="fa fa-star  @if($review_avg >=   4)checked @endif" aria-hidden="true"></i>
+                            <i class="fa fa-star  @if($review_avg >=  5)checked @endif" aria-hidden="true"></i>
+                            <span style="color: orange">   {{count($reviews)}} review(s) , rate {{round($review_avg,2)}} </span>
+
+                        </div>
+
+
+                        <span class="price">{{$hotel->star}}<span class="amout"> star  hotel </span></span>
+
                         <span class="price">Start form <span class="amout">$120</span> per day</span>
                         <span class="price">Phone: <span class="amout">{{$hotel->phone}}</span> </span>
                         <span class="price">Address: <span class="amout">{{$hotel->address}}</span> </span>
@@ -195,14 +211,28 @@
                                         @foreach($reviews as $rs)
                                         <li>
                                             <div class="comment-body">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <a class="comment-avatar"><img src="images/avatar/img-1.jpg" alt=""></a>
+                                                        <h4 class="comment-subject">{{$rs->subject}}</h4>
+                                                        <p>{{$rs->review}}</p>
 
-                                                <a class="comment-avatar"><img src="images/avatar/img-1.jpg" alt=""></a>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <i class="fa fa-star  @if($rs->rate >=   1)checked @endif" aria-hidden="true" ></i>
+                                                        <i class="fa fa-star  @if($rs->rate >=   2)checked @endif" aria-hidden="true"></i>
+                                                        <i class="fa fa-star  @if($rs->rate >=   3)checked @endif" aria-hidden="true"></i>
+                                                        <i class="fa fa-star  @if($rs->rate >=   4)checked @endif" aria-hidden="true"></i>
+                                                        <i class="fa fa-star  @if($rs->rate >=  5)checked @endif" aria-hidden="true"></i>
 
-                                                <h4 class="comment-subject">{{$rs->subject}}</h4>
-                                                <p>{{$rs->review}}</p>
+                                                    </div>
+                                                </div>
+
+
+
 
                                                 <span class="comment-meta">
-                                                    <a href="#">{{$rs->user->name}}</a> - {{$rs->created_at}}
+                                                    <a style="font-size: 1em">{{$rs->user->name}}</a> - {{$rs->created_at}}
                                                 </span>
 
 

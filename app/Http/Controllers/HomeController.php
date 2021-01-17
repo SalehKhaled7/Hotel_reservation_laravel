@@ -33,6 +33,9 @@ class HomeController extends Controller
         $ids=Hotel::select('category_id')->distinct()->get()->toArray();
         return $ids;
     }
+    public static function get_review_avg($id){
+        return Review::where('hotel_id',$id)->average('rate');
+    }
 
     public function index()
     {

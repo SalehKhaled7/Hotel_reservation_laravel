@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Review extends Component
 {
-    public $record,$subject,$review,$hotel_id;
+    public $record,$subject,$review,$hotel_id,$rate;
 
     public function mount($id){
         $this->record=Hotel::findOrFail($id);
@@ -23,6 +23,7 @@ class Review extends Component
         $this->validate([
            'subject'=>'required|min:5',
            'review'=>'required|min:10',
+           'rate'=>'required'
         ]);
 
         \App\Models\Review::create([
@@ -30,7 +31,7 @@ class Review extends Component
             'hotel_id'=>$this->hotel_id,
             'user_id'=>Auth::id(),
             'ip'=>$_SERVER['REMOTE_ADDR'],
-            'rate'=>5,
+            'rate'=>$this->rate,
             'subject'=>$this->subject,
             'review'=>$this->review
         ]);
@@ -43,7 +44,7 @@ class Review extends Component
     {
         $this->subject=null;
         $this->review=null;
-        $this->hotel_id=null;
         $this->ip=null;
+        $this->rate=null;
     }
 }
