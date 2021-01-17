@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login | ThemeKit - Admin Template</title>
+    <title>Sign Up | ThemeKit - Admin Template</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,46 +30,50 @@
     <div class="container-fluid h-100">
         <div class="row flex-row h-100 bg-white">
             <div class="col-xl-8 col-lg-6 col-md-5 p-0 d-md-block d-lg-block d-sm-none d-none">
-                <div class="lavalite-bg" style="background-image: url('{{asset('assets')}}/dashboard//img/auth/login-bg.jpg')">
+                <div class="lavalite-bg" style="background-image: url('{{asset('assets')}}/dashboard/img/auth/register-bg.jpg')">
                     <div class="lavalite-overlay"></div>
                 </div>
             </div>
             <div class="col-xl-4 col-lg-6 col-md-7 my-auto p-0">
                 <div class="authentication-form mx-auto">
-                    <div class="logo-centered">
-                        <a href="/"><img src="{{asset('assets')}}/dashboard/src/img/brand.svg" alt=""></a>
-                    </div>
 
-                    <h3>Sign In</h3>
-                    <p>Happy to see you again!</p>
-                    @include('flash_message')
-                    <form action="{{route('admin_loginAuth')}}" method="post">
+                    <div class="logo-centered">
+                        <a href="../index.html"><img src="{{asset('assets')}}/dashboard/src/img/brand.svg" alt=""></a>
+                    </div>
+                    <h3>New to ThemeKit</h3>
+                    <p>Join us today! It takes only few steps</p>
+                    <form method="POST" action="{{ route('register_create') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email" required="" value="johndoe@admin.com" name="email">
+                            <input type="text" class="form-control" name="name" placeholder="name" required="">
                             <i class="ik ik-user"></i>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password" required="" value="123456" name="password">
+                            <input type="text" class="form-control" name="email" placeholder="Email" required="">
+                            <i class="ik ik-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required="">
                             <i class="ik ik-lock"></i>
                         </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required="">
+                            <i class="ik ik-eye-off"></i>
+                        </div>
                         <div class="row">
-                            <div class="col text-left">
+                            <div class="col-12 text-left">
                                 <label class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input" id="item_checkbox" name="item_checkbox" value="option1">
-                                    <span class="custom-control-label">&nbsp;Remember Me</span>
+                                    <span class="custom-control-label">&nbsp;I Accept <a href="#">Terms and Conditions</a></span>
                                 </label>
-                            </div>
-                            <div class="col text-right">
-                                <a href="forgot-password.html">Forgot Password ?</a>
                             </div>
                         </div>
                         <div class="sign-btn text-center">
-                            <button type="submit" class="btn btn-theme">Sign In</button>
+                            <button class="btn btn-theme">Create Account</button>
                         </div>
                     </form>
                     <div class="register">
-                        <p>Don't have an account? <a href="{{route('admin_register')}}">Create an account</a></p>
+                        <p>Already have an account? <a href="{{route('admin_login')}}">Sign In</a></p>
                     </div>
                 </div>
             </div>
@@ -95,4 +99,3 @@
 </script>
 </body>
 </html>
-

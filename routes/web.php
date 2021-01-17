@@ -53,114 +53,116 @@ Route::post('hotel/{hotel_id}/room/{room_id}/add_reservation',[HomeController::c
 
 
 //admin routes
-Route::middleware('auth')->prefix('admin')->group(function (){
+Route::middleware('auth')->prefix('admin')->group(function () {
 
-    Route::get('/',[App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin'); // dashboard , middleware: the page can't be reached unless the user is auth
-
-    //category routes
-    Route::get('category',[App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
-    Route::get('category/add',[App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_category_add');
-    Route::post('category/create',[App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
-    Route::get('category/edit/{id}',[App\Http\Controllers\Admin\CategoryController::class,'edit'])->name('admin_category_edit');
-    Route::post('category/update/{id}',[App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
-    Route::get('category/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
-    Route::get('category/show',[App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
-
-    //Hotel routes
-    Route::prefix('hotel')->group(function (){
-
-        Route::get('/',[App\Http\Controllers\Admin\HotelController::class,'index'])->name('hotels');
-        Route::get('create',[App\Http\Controllers\Admin\HotelController::class,'create'])->name('admin_hotel_add');
-        Route::post('store',[App\Http\Controllers\Admin\HotelController::class,'store'])->name('admin_hotel_store');
-        Route::get('edit/{id}',[App\Http\Controllers\Admin\HotelController::class,'edit'])->name('admin_hotel_edit');
-        Route::post('update/{id}',[App\Http\Controllers\Admin\HotelController::class,'update'])->name('admin_hotel_update');
-        Route::get('delete/{id}',[App\Http\Controllers\Admin\HotelController::class,'destroy'])->name('admin_hotel_delete');
-        Route::get('show',[App\Http\Controllers\Admin\HotelController::class,'show'])->name('admin_hotel_show');
-
-        //room routes
-        Route::prefix('{hotel_id}/room')->group(function (){
-
-            Route::get('/',[App\Http\Controllers\Admin\RoomController::class,'index'])->name('rooms');
-            Route::get('create',[App\Http\Controllers\Admin\RoomController::class,'create'])->name('admin_room_add');
-            Route::post('store',[App\Http\Controllers\Admin\RoomController::class,'store'])->name('admin_room_store');
-            Route::get('edit/{id}',[App\Http\Controllers\Admin\RoomController::class,'edit'])->name('admin_room_edit');
-            Route::post('update/{id}',[App\Http\Controllers\Admin\RoomController::class,'update'])->name('admin_room_update');
-            Route::get('delete/{id}',[App\Http\Controllers\Admin\RoomController::class,'destroy'])->name('admin_room_delete');
-            Route::get('show',[App\Http\Controllers\Admin\RoomController::class,'show'])->name('admin_room_show');
+    Route::middleware('admin')->group(function () {
 
 
-            //room images routes
-            Route::prefix('{room_id}/images')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin'); // dashboard , middleware: the page can't be reached unless the user is auth
 
-                Route::get('/', [App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
-                Route::post('store', [App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
-                Route::get('delete/{id}', [App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
-                Route::get('show', [App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
+        //category routes
+        Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
+        Route::get('category/add', [App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
+        Route::post('category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin_category_create');
+        Route::get('category/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin_category_edit');
+        Route::post('category/update/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
+        Route::get('category/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
+        Route::get('category/show', [App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
+
+        //Hotel routes
+        Route::prefix('hotel')->group(function () {
+
+            Route::get('/', [App\Http\Controllers\Admin\HotelController::class, 'index'])->name('hotels');
+            Route::get('create', [App\Http\Controllers\Admin\HotelController::class, 'create'])->name('admin_hotel_add');
+            Route::post('store', [App\Http\Controllers\Admin\HotelController::class, 'store'])->name('admin_hotel_store');
+            Route::get('edit/{id}', [App\Http\Controllers\Admin\HotelController::class, 'edit'])->name('admin_hotel_edit');
+            Route::post('update/{id}', [App\Http\Controllers\Admin\HotelController::class, 'update'])->name('admin_hotel_update');
+            Route::get('delete/{id}', [App\Http\Controllers\Admin\HotelController::class, 'destroy'])->name('admin_hotel_delete');
+            Route::get('show', [App\Http\Controllers\Admin\HotelController::class, 'show'])->name('admin_hotel_show');
+
+            //room routes
+            Route::prefix('{hotel_id}/room')->group(function () {
+
+                Route::get('/', [App\Http\Controllers\Admin\RoomController::class, 'index'])->name('rooms');
+                Route::get('create', [App\Http\Controllers\Admin\RoomController::class, 'create'])->name('admin_room_add');
+                Route::post('store', [App\Http\Controllers\Admin\RoomController::class, 'store'])->name('admin_room_store');
+                Route::get('edit/{id}', [App\Http\Controllers\Admin\RoomController::class, 'edit'])->name('admin_room_edit');
+                Route::post('update/{id}', [App\Http\Controllers\Admin\RoomController::class, 'update'])->name('admin_room_update');
+                Route::get('delete/{id}', [App\Http\Controllers\Admin\RoomController::class, 'destroy'])->name('admin_room_delete');
+                Route::get('show', [App\Http\Controllers\Admin\RoomController::class, 'show'])->name('admin_room_show');
+
+
+                //room images routes
+                Route::prefix('{room_id}/images')->group(function () {
+
+                    Route::get('/', [App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
+                    Route::post('store', [App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
+                    Route::get('delete/{id}', [App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('admin_image_delete');
+                    Route::get('show', [App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
+                });
+
             });
 
         });
 
+
+        //setting routes
+        Route::prefix('setting')->group(function () {
+
+            Route::get('/', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
+            Route::get('update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+        });
+
+        //Front setting routes
+        Route::prefix('front_setting')->group(function () {
+
+            Route::get('/', [FrontSettingController::class, 'index'])->name('admin_front_setting');
+            Route::post('update/{id}', [FrontSettingController::class, 'update'])->name('admin_front_setting_update');
+        });
+
+        //message routes
+        Route::prefix('messages')->group(function () {
+
+            Route::get('/', [MessageController::class, 'index'])->name('messages');
+            Route::get('edit/{id}', [MessageController::class, 'edit'])->name('admin_message_edit');
+            Route::post('update/{id}', [MessageController::class, 'update'])->name('admin_message_update');
+            Route::get('delete/{id}', [MessageController::class, 'destroy'])->name('admin_message_delete');
+            Route::get('show', [MessageController::class, 'show'])->name('admin_messages_show');
+        });
+
+        //review routes
+        Route::prefix('reviews')->group(function () {
+
+            Route::get('/', [ReviewController::class, 'index'])->name('reviews');
+            Route::get('edit/{id}', [ReviewController::class, 'edit'])->name('admin_review_edit');
+            Route::post('update/{id}', [ReviewController::class, 'update'])->name('admin_review_update');
+            Route::get('delete/{id}', [ReviewController::class, 'destroy'])->name('admin_review_delete');
+            Route::get('show', [ReviewController::class, 'show'])->name('admin_review_show');
+        });
+
+        //reservation routes
+        Route::prefix('reservation')->group(function () {
+
+            Route::get('/', [ReservationController::class, 'index'])->name('admin_reservations');
+            Route::get('edit/{id}', [ReservationController::class, 'edit'])->name('admin_reservation_edit');
+            Route::post('update/{id}', [ReservationController::class, 'update'])->name('admin_reservation_update');
+            Route::get('delete/{id}', [ReservationController::class, 'destroy'])->name('admin_reservation_delete');
+            Route::get('show', [ReservationController::class, 'show'])->name('admin_reservation_show');
+        });
+
+        //Faq routes
+        Route::prefix('faqs')->group(function () {
+
+            Route::get('/', [FaqController::class, 'index'])->name('admin_faqs');
+            Route::get('add', [FaqController::class, 'create'])->name('admin_faq_create');
+            Route::post('create', [FaqController::class, 'store'])->name('admin_faq_store');
+            Route::get('edit/{id}', [FaqController::class, 'edit'])->name('admin_faq_edit');
+            Route::post('update/{id}', [FaqController::class, 'update'])->name('admin_faq_update');
+            Route::get('delete/{id}', [FaqController::class, 'destroy'])->name('admin_faq_delete');
+            Route::get('show', [FaqController::class, 'show'])->name('admin_faq_show');
+        });
+
     });
-
-
-
-    //setting routes
-    Route::prefix('setting')->group(function () {
-
-        Route::get('/', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
-        Route::get('update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
-    });
-
-    //Front setting routes
-    Route::prefix('front_setting')->group(function () {
-
-        Route::get('/', [FrontSettingController::class, 'index'])->name('admin_front_setting');
-        Route::post('update/{id}', [FrontSettingController::class, 'update'])->name('admin_front_setting_update');
-    });
-
-    //message routes
-    Route::prefix('messages')->group(function (){
-
-        Route::get('/',[MessageController::class,'index'])->name('messages');
-        Route::get('edit/{id}',[MessageController::class,'edit'])->name('admin_message_edit');
-        Route::post('update/{id}',[MessageController::class,'update'])->name('admin_message_update');
-        Route::get('delete/{id}',[MessageController::class,'destroy'])->name('admin_message_delete');
-        Route::get('show',[MessageController::class,'show'])->name('admin_messages_show');
-    });
-
-    //review routes
-    Route::prefix('reviews')->group(function (){
-
-        Route::get('/',[ReviewController::class,'index'])->name('reviews');
-        Route::get('edit/{id}',[ReviewController::class,'edit'])->name('admin_review_edit');
-        Route::post('update/{id}',[ReviewController::class,'update'])->name('admin_review_update');
-        Route::get('delete/{id}',[ReviewController::class,'destroy'])->name('admin_review_delete');
-        Route::get('show',[ReviewController::class,'show'])->name('admin_review_show');
-    });
-
-    //reservation routes
-    Route::prefix('reservation')->group(function (){
-
-        Route::get('/',[ReservationController::class,'index'])->name('admin_reservations');
-        Route::get('edit/{id}',[ReservationController::class,'edit'])->name('admin_reservation_edit');
-        Route::post('update/{id}',[ReservationController::class,'update'])->name('admin_reservation_update');
-        Route::get('delete/{id}',[ReservationController::class,'destroy'])->name('admin_reservation_delete');
-        Route::get('show',[ReservationController::class,'show'])->name('admin_reservation_show');
-    });
-
-    //Faq routes
-    Route::prefix('faqs')->group(function (){
-
-        Route::get('/',[FaqController::class,'index'])->name('admin_faqs');
-        Route::get('add',[FaqController::class,'create'])->name('admin_faq_create');
-        Route::post('create',[FaqController::class,'store'])->name('admin_faq_store');
-        Route::get('edit/{id}',[FaqController::class,'edit'])->name('admin_faq_edit');
-        Route::post('update/{id}',[FaqController::class,'update'])->name('admin_faq_update');
-        Route::get('delete/{id}',[FaqController::class,'destroy'])->name('admin_faq_delete');
-        Route::get('show',[FaqController::class,'show'])->name('admin_faq_show');
-    });
-
-
 });
 
 Route::middleware('auth')->prefix('_user')->namespace('_user')->group(function (){
@@ -183,9 +185,16 @@ Route::middleware('auth')->prefix('_user')->namespace('_user')->group(function (
     });
 
 });
+
+//user login
 Route::get('login',[HomeController::class,'user_login'])->name('user_login'); // login
 Route::post('loginAuth',[HomeController::class,'user_loginAuth'])->name('user_loginAuth'); // login auth , use post for data sending
-
+Route::get('register',[HomeController::class,'user_register'])->name('user_register'); // login
+Route::post('user_register_create',[HomeController::class,'user_register_create'])->name('user_register_create'); // login
+Route::get('logout',[HomeController::class,'user_logout'])->name('user_logout'); // logout
+//admin login
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login'); // login
 Route::post('/admin/loginAuth',[HomeController::class,'loginAuth'])->name('admin_loginAuth'); // login auth , use post for data sending
-Route::get('logout',[HomeController::class,'logout'])->name('logout'); // logout
+Route::get('/admin/register',[HomeController::class,'register'])->name('admin_register'); // login
+Route::post('/admin/register_create',[HomeController::class,'register_create'])->name('register_create'); // login
+Route::get('admin/logout',[HomeController::class,'logout'])->name('logout'); // logout

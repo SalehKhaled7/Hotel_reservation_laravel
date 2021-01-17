@@ -12,13 +12,13 @@
                     <span>{{Auth::user()->name}} <i class="fa fa"></i></span>
                     <ul>
                         <li><a href="{{route('profile')}}">profile</a></li>
-                        <li><a href="{{route('logout')}}">logout</a></li>
+                        <li><a href="{{route('user_logout')}}">logout</a></li>
                     </ul>
                 </div>
         @else
                 <span class="login-register">
                             <a href="{{route('user_login')}}">Login</a>
-                            <a href="register.html">register</a>
+                            <a href="{{route('user_register')}}">register</a>
                         </span>
         @endif
 

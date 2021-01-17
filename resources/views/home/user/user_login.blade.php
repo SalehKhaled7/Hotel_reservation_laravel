@@ -13,16 +13,18 @@
 
 
     <!-- ACCOUNT -->
-    <section class="section-account parallax bg-11">
+    <section class="section-account parallax" style="background-image:url('{{asset('assets')}}/images/5671472-hotel-wallpapers.jpg')">
         <div class="awe-overlay"></div>
         <div class="container">
             <div class="login-register">
                 <div class="text text-center">
                     <h2>LOGIN ACCOUNT</h2>
                     <p>Lorem Ipsum is simply dummy text of the printing</p>
+
                     <form class="account_form" action="{{route('user_loginAuth')}}" method="post" >
                         @csrf
                         <div class="field-form">
+                            @include('flash_message')
                             <input id="email" class="field-text" type="email" name="email" :value="old('email')" required autofocus>
                         </div>
                         <div class="field-form">
@@ -32,7 +34,7 @@
                         <div class="field-form field-submit">
                             <button class="awe-btn awe-btn-13">Login</button>
                         </div>
-                        <span class="account-desc">I don’t have an account  -  <a href="{{ route('password.request') }}">Forgot Password</a></span>
+                        <span class="account-desc"><a href="{{route('user_register')}}" >I don’t have an account</a>  -  <a href="{{ route('password.request') }}">Forgot Password</a></span>
                     </form>
                 </div>
             </div>
