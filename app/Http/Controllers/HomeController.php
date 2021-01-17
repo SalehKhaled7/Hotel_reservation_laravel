@@ -39,15 +39,20 @@ class HomeController extends Controller
 
     public function index()
     {
+
+        $hotels_slider=Hotel::select('id','title','image','star')->limit(3)->inRandomOrder()->get();
         $hotels_list1=Hotel::select('id','title','image','star')->limit(6)->inRandomOrder()->get();
         $hotels_list2=Hotel::select('id','title','image','star')->limit(6)->inRandomOrder()->get();
+        $home_reviews=Review::select('id','review','user_id','hotel_id',)->with('hotel')->limit(2)->inRandomOrder()->get();
         $cities = Hotel::select('city')->distinct()->get();
 
-        //print_r(count($cities));
-        //exit();
+//        print_r($our_best);
+//        exit();
         $data=[
             'hotel_list'=>$hotels_list1,
             'hotel_list2'=>$hotels_list2,
+            'hotels_slider'=>$hotels_slider,
+            'home_reviews'=>$home_reviews,
             'cities'=>$cities,
         ];
 

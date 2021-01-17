@@ -143,32 +143,6 @@
     <section class="section-our-best bg-white">
         <div class="container">
 
-            <div class="our-best">
-                <div class="row">
-
-                    <div class="col-md-6 col-md-push-6">
-                        <div class="img">
-                            <img src="{{asset('assets')}}/images/home/ourbest/img-1.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-md-pull-6 ">
-                        <div class="text">
-                            <h2 class="heading">Our Best</h2>
-                            <p>One of Catalina Island's best-loved hotels, Hotel Vista Del Mar is recognized as one of Avalon's leading hotels with gracious island hospitality, thoughtful amenities and distinctive .</p>
-                            <ul>
-                                <li><img src="{{asset('assets')}}/images/home/ourbest/icon-3.png" alt="icon">250 Best Rooms  5 Star</li>
-                                <li><img src="{{asset('assets')}}/images/home/ourbest/icon-2.png" alt="icon">Wet Bar with Refrigerator</li>
-                                <li><img src="{{asset('assets')}}/images/home/ourbest/icon-4.png" alt="icon">Double Whirlpool Jacuzzi Tub</li>
-                                <li><img src="{{asset('assets')}}/images/home/ourbest/icon-5.png" alt="icon">Luxurious High Thread Count </li>
-                                <li><img src="{{asset('assets')}}/images/home/ourbest/icon-1.png" alt="icon">Breakfast each morning</li>
-                                <li><img src="{{asset('assets')}}/images/home/ourbest/icon-6.png" alt="icon">Ocean Views to lotus Hotel</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
     </section>
@@ -181,34 +155,19 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
                         <div class="guestbook-content owl-single">
-
+                            @foreach($home_reviews as $rs)
                             <!-- ITEM -->
                             <div class="guestbook-item">
-                                <div class="img">
-                                    <img src="{{asset('assets')}}/images/avatar/img-5.jpg" alt="">
-                                </div>
-
                                 <div class="text">
-                                    <p>This is the only place to stay in Catalina! I have stayed in the cheaper hotels and they were fine, but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass of wine while looking out your ocean view window and then to top it all off...</p>
-                                    <span><strong>Seelentag</strong></span><br>
-                                    <span>From Los Angeles, California</span>
+                                    <div><p>{{$rs->review}}</p></div>
+
+                                    <span><strong>{{$rs->user->name}}</strong></span><br>
+                                    <span>review on {{$rs->hotel->title}} hotel</span>
                                 </div>
                             </div>
                             <!-- ITEM -->
+                            @endforeach
 
-                            <!-- ITEM -->
-                            <div class="guestbook-item">
-                                <div class="img">
-                                    <img src="{{asset('assets')}}/images/avatar/img-5.jpg" alt="">
-                                </div>
-
-                                <div class="text">
-                                    <p>This is the only place to stay in Catalina! I have stayed in the cheaper hotels and they were fine, but this is just the icing on the cake! After spending the day bike riding and hiking to come back and enjoy a glass of wine while looking out your ocean view window and then to top it all off...</p>
-                                    <span><strong>Seelentag</strong></span><br>
-                                    <span>From Los Angeles, California</span>
-                                </div>
-                            </div>
-                            <!-- ITEM -->
 
                         </div>
                     </div>
@@ -220,312 +179,15 @@
     </div>
     <!-- END / HOME GUEST BOOK -->
 
-    <!-- HOME NEW -->
-    <section class="section-event-news bg-white">
-        <div class="container">
 
-            <div class="event-news">
-                <div class="row">
-
-                    <!-- EVENT -->
-                    <div class="col-md-6">
-                        <div class="event">
-                            <h2 class="heading">EVENT &amp; DEAL</h2>
-                            <span class="box-border w350"></span>
-
-                            <div class="row">
-
-                                <!-- ITEM -->
-                                <div class="col-xs-12 col-sm-12">
-                                    <div class="event-slide owl-single">
-
-                                        <div class="event-item">
-                                            <div class="img hover-zoom">
-                                                <a href="#">
-                                                    <img src="{{asset('assets')}}/images/home/eventdeal/img-1.jpg" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="event-item">
-                                            <div class="img hover-zoom">
-                                                <a href="#">
-                                                    <img src="{{asset('assets')}}/images/home/eventdeal/img-1.jpg" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-6">
-                                    <div class="event-item">
-                                        <div class="img hover-zoom">
-                                            <a href="#">
-                                                <img src="{{asset('assets')}}/images/home/eventdeal/img-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="text">
-                                            <div class="text-cn">
-                                                <h2>SAVE THE DATE</h2>
-                                                <span>BECCA &amp; ROBERT</span>
-                                                <a href="#" class="awe-btn awe-btn-12">VIEW MORE</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-xs-6">
-                                    <div class="event-item">
-                                        <div class="img hover-zoom">
-                                            <a href="#">
-                                                <img src="{{asset('assets')}}/images/home/eventdeal/img-2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="text">
-                                            <div class="text-cn">
-                                                <h2>GO ON BEACH. lotus </h2>
-                                                <a href="#" class="awe-btn awe-btn-12">VIEW MORE</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END / EVENT -->
-
-                    <!-- NEWS -->
-                    <div class="col-md-6">
-                        <div class="news">
-                            <h2 class="heading">NEWS</h2>
-                            <span class="box-border w350 space-5"></span>
-
-                            <div class="row">
-
-                                <!-- ITEM -->
-                                <div class="col-md-12">
-                                    <div class="news-item">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/home/lotusnews/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <span class="date">21 / March</span>
-                                            <h2><a href="#">UPDATE MENU FOOD IN lotus HOTEL</a></h2>
-                                            <a href="" class="read-more">[ Read More ]</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-12">
-                                    <div class="news-item">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/home/lotusnews/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <span class="date">8 / March</span>
-                                            <h2><a href="#">WEDDING DAY JONATHA &amp; JESSICA</a></h2>
-                                            <a href="" class="read-more">[ Read More ]</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-12">
-                                    <div class="news-item">
-                                        <div class="img">
-                                            <a href="#"><img src="{{asset('assets')}}/images/home/lotusnews/img-1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="text">
-                                            <span class="date">16 / February</span>
-                                            <h2><a href="#">THE BEST WEDDING GUIDE 2015</a></h2>
-                                            <a href="" class="read-more">[ Read More ]</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                            </div>
-
-                            <a href="#" class="awe-btn awe-btn-default">VIEW MORE</a>
-
-                        </div>
-
-                    </div>
-                    <!-- END / NEWS -->
-
-                </div>
-
-                <div class="hr"></div>
-
-            </div>
-
-        </div>
-    </section>
-    <!-- END / HOME NEW -->
 
     <!-- GALLERY -->
     <section class="section-gallery bg-white">
 
         <div class="gallery  no-padding">
-            <h2 class="heading text-center">GALLERY</h2>
 
-            <!-- FILTER -->
-            <div class="gallery-cat text-center">
-                <ul class="list-inline">
-                    <li class="active"><a href="#" data-filter="*">All</a></li>
-                    <li><a href="#" data-filter=".ground">HOTEL &amp; GROUND</a></li>
-                    <li><a href="#" data-filter=".suite">ROOM/SUITE </a></li>
-                    <li><a href="#" data-filter=".bathroom">BATHROOM</a></li>
-                    <li><a href="#" data-filter=".dining">DINING</a></li>
-                </ul>
-            </div>
-            <!-- END / FILTER -->
 
-            <!-- GALLERY CONTENT -->
-            <div class="gallery-content hover-img">
-                <div class="row">
-                    <div class="gallery-isotope col-6 pd-0">
 
-                        <!-- ITEM SIZE -->
-                        <div class="item-size"></div>
-                        <!-- END / ITEM SIZE -->
-                        <!-- ITEM -->
-
-                        <div class="item-isotope suite dining ">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope  ground bathroom suite">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope ground bathroom dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope suite dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope  ground suite dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope ground bathroom dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope ground suite dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope bathroom suite dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope bathroom suite dining">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope ground bathroom">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope ground bathroom suite ">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="item-isotope ground bathroom">
-                            <div class="gallery_item">
-                                <a  href="{{asset('assets')}}/images/gallery/popup/img-1.jpg" class="gallery-popup mfp-image" title="Luxury Room view all">
-                                    <img src="{{asset('assets')}}/images/gallery/img-1.jpg" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                    </div>
-                </div>
-
-                <div class="our-gallery text-center">
-                    <a href="#" class="awe-btn awe-btn-default">BROWSE OUR GALLERY</a>
-                </div>
 
             </div>
             <!-- GALLERY CONTENT -->

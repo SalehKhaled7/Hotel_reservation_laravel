@@ -54,7 +54,7 @@
                         <span class="price">Start form <span class="amout">$120</span> per day</span>
                         <span class="price">Phone: <span class="amout">{{$hotel->phone}}</span> </span>
                         <span class="price">Address: <span class="amout">{{$hotel->address}}</span> </span>
-                        <p>{!!$hotel->details!!}</p>
+                        <p>{{$hotel->details}}</p>
 
                     </div>
                 </div>
