@@ -94,7 +94,7 @@
                                             <a href="{{route('room_list',['id'=>$rs2->id])}}"><img src="{{asset('assets')}}/images/hotels/{{$rs2->image}}" alt=""></a>
                                         </div>
                                         <div class="text">
-                                            <h2><a href="{{route('room_list',['id'=>$rs2->id])}}">{{$rs-> title }}</a></h2>
+                                            <h2><a href="{{route('room_list',['id'=>$rs2->id])}}">{{$rs2-> title }}</a></h2>
                                             <p class="price">
                                                 <span class="amout">{{$rs2->star}}</span> Star
                                             </p>

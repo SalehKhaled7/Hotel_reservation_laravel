@@ -1,5 +1,6 @@
 @php
-    $setting=\App\Http\Controllers\HomeController::getSetting()
+    $setting=\App\Http\Controllers\HomeController::getSetting();
+  $front_setting=\App\Http\Controllers\HomeController::getFrontSetting();
 @endphp
 @extends('layouts.base')
 
@@ -7,13 +8,13 @@
 @section('keywords',' ')
 @section('content')
     <!-- SUB BANNER -->
-    <section class="section-sub-banner bg-9">
+    <section class="section-sub-banner" style="background-image:url('{{Storage::url($front_setting->slider_img2)}}')">
         <div class="awe-overlay"></div>
         <div class="sub-banner">
             <div class="container">
                 <div class="text text-center">
-                    <h2>@yield('title_user')</h2>
-                    <a href="{{route('profile')}}">USER</a> > @section('path') @show
+                    <h2>@section('big_title') @show</h2>
+                    <a style="color: white" href="{{route('profile')}}">USER</a> <span style="color: white"> > </span> @section('path') @show
                 </div>
             </div>
 
@@ -38,10 +39,8 @@
                                 <div class="col-md-3">
                                     <ul class="room-detail_tab-header">
                                         <li @if(Request::url() === route('profile') ) class="active" @endif ><a href="{{route('profile')}}"  >Profile</a></li>
-                                        <li @if(Request::url() === route('user_reviews') ) class="active" @endif ><a href="{{route('user_reviews')}}" >Reviews</a></li>
                                         <li @if(Request::url() === route('user_reservations') ) class="active" @endif ><a href="{{route('user_reservations')}}" >Reservations</a></li>
-                                        <li><a href="#package" data-toggle="tab">PACKAGE</a></li>
-                                        <li><a href="#rates" data-toggle="tab">RATES</a></li>
+                                        <li @if(Request::url() === route('user_reviews') ) class="active" @endif ><a href="{{route('user_reviews')}}" >Reviews</a></li>
                                         <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
                                     </ul>
                                 </div>

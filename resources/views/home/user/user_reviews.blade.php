@@ -1,7 +1,10 @@
 @extends('home.user._base')
 @section('title','MY REVIEWS')
+@section('big_title')
+    USER REVIEWS
+@endsection
 @section('path')
-    <a>MY REVIEWS</a>
+    <a style="color: white">MY REVIEWS</a>
 @endsection
 @section('content_user')
 
