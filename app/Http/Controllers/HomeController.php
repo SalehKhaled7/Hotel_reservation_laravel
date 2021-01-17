@@ -12,9 +12,13 @@ use App\Models\Reservation;
 use App\Models\Review;
 use App\Models\Room;
 use App\Models\Setting;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Laravel\Jetstream\Jetstream;
 use function Illuminate\Support\Facades\Request;
 
 class HomeController extends Controller
@@ -206,13 +210,50 @@ class HomeController extends Controller
 
     }
 
-
+    #admin login
     public function login(){ // return dashboard > login page
         return view('admin.login');
     }
+
+    public function register(){ // return dashboard > login page
+        return view('admin.register');
+    }
+    public function register_create(Request $request)
+    {
+        $data = new User;
+        $data->name =$request->input('name');
+        $data->email = $request->input('email');
+        $data->password = Hash::make($request->input('password'));
+        $data ->save();
+        return redirect(route('admin_login'))->with('success',' Registration done successfully . ');
+
+    }
+    #user login
     public function user_login(){ // return dashboard > login page
         return view('home.user.user_login');
     }
+    public function user_register(){ // return dashboard > login page
+        return view('home.user.user_register');
+    }
+    public function user_register_create(Request $request)
+    {
+        $data = new User;
+        $data->name =$request->input('name');
+        $data->email = $request->input('email');
+        $data->password = Hash::make($request->input('password'));
+        $data ->save();
+        return redirect(route('user_login'))->with('success',' Registration done successfully . ');
+
+    }
+    public function user_logout(Request $request){
+
+
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
+
 
 
     public function loginAuth(Request $request){
@@ -260,7 +301,7 @@ class HomeController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/admin');
     }
 
 
