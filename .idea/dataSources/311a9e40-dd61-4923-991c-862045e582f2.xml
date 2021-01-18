@@ -1996,17 +1996,22 @@ tokenable_id</ColNames>
       <Position>12</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <index id="547" parent="354" name="users_email_unique">
+    <column id="547" parent="354" name="phone">
+      <Position>13</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="548" parent="354" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="548" parent="354" name="PRIMARY">
+    <key id="549" parent="354" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="549" parent="354" name="users_email_unique">
+    <key id="550" parent="354" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
