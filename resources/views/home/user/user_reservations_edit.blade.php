@@ -18,8 +18,6 @@
                 <h6>{{$reservation->hotel->title}}</h6>
                 <label>ROOM ID :</label>
                 <h6>{{$reservation->room_id  }}</h6>
-                <label>HOTEL :</label>
-                <h6>{{$reservation->hotel->title}}</h6>
                 <form action="{{route('user_update_reservation',['id'=>$reservation->id])}}" method="post">
                 @csrf
                 <div class="row">

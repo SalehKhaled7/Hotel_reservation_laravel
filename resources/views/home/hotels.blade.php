@@ -31,8 +31,7 @@
                 <div class="room_item-6" data-background="{{asset('assets')}}/images/hotels/{{$rs->image}}">
 
                     <div class="text">
-                        <h2><a href="#">{{$rs->title}}</a></h2>
-                        <span class="price">Start form <span class="amout">$120</span> per day</span>
+                        <h2><a href="{{route('room_list',['id'=>$rs->id])}}">{{$rs->title}}</a></h2>
                         <p>{{$rs->details}}</p>
                         <ul>
                             <li>{{$rs->star}} Star</li>

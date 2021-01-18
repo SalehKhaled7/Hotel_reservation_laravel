@@ -66,10 +66,9 @@
                     <div class="widget">
                         <h4 class="widget-title">Page site</h4>
                         <ul>
-                            <li><a href="#">Guest Book</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Restaurant</a></li>
-                            <li><a href="#">Event</a></li>
+                            <li><a href="{{route('references')}}">References</a></li>
+                            <li><a href="{{route('contact')}}">Contact</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -78,10 +77,9 @@
                     <div class="widget">
                         <h4 class="widget-title">ABOUT</h4>
                         <ul>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="">Contact Us</a></li>
-                            <li><a href="">Comming Soon</a></li>
+                            <li><a href="{{route('about_us')}}">About Us</a></li>
+                            <li><a href="{{route('faq')}}">FAQs</a></li>
+
                         </ul>
                     </div>
                 </div>

@@ -10,17 +10,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="fixing header image and links for user and about us pages">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_18_005008_add_phone_to_user_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/user_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/user_roles.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/311a9e40-dd61-4923-991c-862045e582f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/311a9e40-dd61-4923-991c-862045e582f2.xml" afterDir="false" />
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="User Role management">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/rooms/1610984353.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/rooms/1610984377.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_top_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_top_bar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/hotel_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/hotel_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/hotels.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/hotels.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/rooms.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/rooms.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user/user_reservations_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/user_reservations_edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +280,8 @@
       <workItem from="1610835870805" duration="6467000" />
       <workItem from="1610882640285" duration="6301000" />
       <workItem from="1610902676471" duration="13096000" />
-      <workItem from="1610927490306" duration="9082000" />
+      <workItem from="1610927490306" duration="9140000" />
+      <workItem from="1610981784908" duration="2754000" />
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -561,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610915898742</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="User Role management">
+      <created>1610936688880</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1610936688880</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +593,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="site setting model added" />
     <MESSAGE value="model relationships added" />
     <MESSAGE value="fix category&lt;-&gt;model relationship" />
     <MESSAGE value="admin navigations now have active effect" />
@@ -609,7 +617,8 @@
     <MESSAGE value="fixing header image and links for user and about us pages" />
     <MESSAGE value="user , admin registration pages added" />
     <MESSAGE value="user roles added , normal users can't reach admin panel anymore" />
-    <option name="LAST_COMMIT_MESSAGE" value="user roles added , normal users can't reach admin panel anymore" />
+    <MESSAGE value="User Role management" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Role management" />
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -664,10 +673,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610915899825">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1610936690042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610915899825" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610936690042" />
     <state x="540" y="174" key="com.intellij.database.dbimport.ImportDialog" timestamp="1610125673960">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

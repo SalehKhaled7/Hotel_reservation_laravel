@@ -126,10 +126,9 @@
                 <div class="row">
                     <div class="col-md-3">
                         <ul class="room-detail_tab-header">
-                            <li><a href="#overview" data-toggle="tab">OVERVIEW</a></li>
-                            <li class="active"><a href="#amenities" data-toggle="tab">amenities</a></li>
+                            <li class="active"><a href="#overview" data-toggle="tab">OVERVIEW</a></li>
+                            <li><a href="#amenities" data-toggle="tab">amenities</a></li>
                             <li><a href="#package" data-toggle="tab">PACKAGE</a></li>
-                            <li><a href="#rates" data-toggle="tab">RATES</a></li>
                             <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
                         </ul>
                     </div>
@@ -138,21 +137,21 @@
                         <div class="room-detail_tab-content tab-content">
 
                             <!-- OVERVIEW -->
-                            <div class="tab-pane fade" id="overview">
+                            <div class="tab-pane fade active in" id="overview">
 
                                 <div class="room-detail_overview">
-                                    <h5 class='text-uppercase
-                                        '>de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h5>
+                                    <h5 class='text-uppercase'>de Finibus Bonorum et Malorum", written by Cicero in 45 BC</h5>
                                     <p>Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accommodations, superb amenities, genuine hospitality and dedicated service for an elevated experience in the Rocky Mountains.</p>
 
                                     <div class="row">
                                         <div class="col-xs-6 col-md-4">
                                             <h6>SPECIAL ROOM</h6>
                                             <ul>
-                                                <li>Max: 4 Person(s)</li>
-                                                <li>Size: 35 m2 / 376 ft2</li>
-                                                <li>View: Ocen</li>
-                                                <li>Bed: King-size or twin beds</li>
+                                                <li>Id: {{$room->id}}  </li>
+                                                <li>Type: {{$room->type}}</li>
+                                                <li>Max: {{$room->beds}} Person(s)</li>
+                                                <li>View: {{$room->view}}</li>
+
                                             </ul>
                                         </div>
                                         <div class="col-xs-6 col-md-4">
@@ -171,7 +170,7 @@
                             <!-- END / OVERVIEW -->
 
                             <!-- AMENITIES -->
-                            <div class="tab-pane fade active in" id="amenities">
+                            <div class="tab-pane fade" id="amenities">
 
                                 <div class="room-detail_amenities">
                                     <p>Located in the heart of Aspen with a unique blend of contemporary luxury and historic heritage, deluxe accommodations, superb amenities, genuine hospitality and dedicated service for an elevated experience in the Rocky Mountains.</p>
@@ -180,9 +179,9 @@
                                         <div class="col-xs-6 col-lg-4">
                                             <h6>LIVING ROOM</h6>
                                             <ul>
-                                                <li>Oversized work desk</li>
-                                                <li>Hairdryer</li>
-                                                <li>Iron/ironing board upon request</li>
+                                                <li>TV: @if($room ->tv) Yes @else No @endif</li>
+                                                <li>WIFI: @if($room ->wifi) Yes @else No @endif</li>
+                                                <li>Air conditioner:  @if($room ->air_conditioner) Yes @else No @endif </li>
                                             </ul>
                                         </div>
                                         <div class="col-xs-6 col-lg-4">
@@ -245,12 +244,12 @@
                                     <div class="room-package_item">
 
                                         <div class="text">
-                                            <h4><a href="#">package standar</a></h4>
+                                            <h4><a href="#">Comming soon</a></h4>
                                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
 
                                             <div class="room-package_price">
                                                 <p class="price">
-                                                    <span class="amout">$260</span> / Package
+                                                    <span class="amout">$xxx</span> / Package
                                                 </p>
                                                 <a href="#" class="awe-btn awe-btn-default">Book package</a>
                                             </div>
@@ -258,136 +257,11 @@
                                     </div>
                                     <!-- END / ITEM package -->
 
-                                    <!-- ITEM package -->
-                                    <div class="room-package_item">
 
-                                        <div class="text">
-                                            <h4><a href="#">package standar</a></h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
-
-                                            <div class="room-package_price">
-                                                <p class="price">
-                                                    <span class="amout">$260</span> / Package
-                                                </p>
-                                                <a href="#" class="awe-btn awe-btn-default">Book package</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- END / ITEM package -->
-
-                                    <!-- ITEM package -->
-                                    <div class="room-package_item">
-
-                                        <div class="text">
-                                            <h4><a href="#">package standar</a></h4>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p>
-
-                                            <div class="room-package_price">
-                                                <p class="price">
-                                                    <span class="amout">$260</span> / Package
-                                                </p>
-                                                <a href="#" class="awe-btn awe-btn-default">Book package</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- END / ITEM package -->
                                 </div>
 
                             </div>
                             <!-- END / PACKAGE -->
-
-                            <!-- RATES -->
-                            <div class="tab-pane fade" id="rates">
-
-                                <div class="room-detail_rates">
-                                    <table>
-                                        <thead>
-                                        <tr>
-                                            <th>Rate Period</th>
-                                            <th>Nightly</th>
-                                            <th>Weekend Night</th>
-                                            <th>Weekly</th>
-                                            <th>Monthly</th>
-                                            <th>Event</th>
-                                        </tr>
-                                        </thead>
-                                        <tr>
-                                            <td>
-                                                <h6>Spring/Summer Season</h6>
-                                                <ul>
-                                                    <li>Jun 1 - Aug 31</li>
-                                                    <li>3 night minimum stay</li>
-                                                </ul>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$320</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$23</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$120</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$100</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$89</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h6>Summer/Fall Season</h6>
-                                                <ul>
-                                                    <li>Jun 1 - Aug 31</li>
-                                                    <li>3 night minimum stay</li>
-                                                </ul>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$320</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$23</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$120</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$100</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$89</span></p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h6>Christmas Season</h6>
-                                                <ul>
-                                                    <li>Jun 1 - Aug 31</li>
-                                                    <li>3 night minimum stay</li>
-                                                </ul>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$320</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$23</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$120</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$100</span></p>
-                                            </td>
-                                            <td>
-                                                <p class="price"><span class="amout">$89</span></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-
-                            </div>
-                            <!-- END / RATES -->
 
                             <!-- CALENDAR -->
                             <div class="tab-pane fade" id="calendar">
@@ -577,114 +451,6 @@
 
             </div>
             <!-- END / TAB -->
-
-            <!-- COMPARE ACCOMMODATION -->
-            <div class="room-detail_compare">
-                <h2 class="room-compare_title">COMPARE ACCOMMODATION</h2>
-
-                <div class="room-compare_content">
-
-                    <div class="row">
-                        <!-- ITEM -->
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="room-compare_item">
-                                <div class="img">
-                                    <a href="#"><img src="images/room/detail/compare/img-1.jpg" alt=""></a>
-                                </div>
-
-                                <div class="text">
-                                    <h2><a href="">LUxury room</a></h2>
-
-                                    <ul>
-                                        <li><i class="lotus-icon-person"></i> Max: 2 Person(s)</li>
-                                        <li><i class="lotus-icon-bed"></i> Bed: King-size or twin beds</li>
-                                        <li><i class="lotus-icon-view"></i> View: Ocen</li>
-                                    </ul>
-
-                                    <a href="#" class="awe-btn awe-btn-default">VIEW DETAIL</a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="room-compare_item">
-                                <div class="img">
-                                    <a href="#"><img src="images/room/detail/compare/img-1.jpg" alt=""></a>
-                                </div>
-
-                                <div class="text">
-                                    <h2><a href="">Family Room</a></h2>
-
-                                    <ul>
-                                        <li><i class="lotus-icon-person"></i> Max: 2 Person(s)</li>
-                                        <li><i class="lotus-icon-bed"></i> Bed: King-size or twin beds</li>
-                                        <li><i class="lotus-icon-view"></i> View: Ocen</li>
-                                    </ul>
-
-                                    <a href="#" class="awe-btn awe-btn-default">VIEW DETAIL</a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="room-compare_item">
-                                <div class="img">
-                                    <a href="#"><img src="images/room/detail/compare/img-1.jpg" alt=""></a>
-                                </div>
-
-                                <div class="text">
-                                    <h2><a href="">standard Room</a></h2>
-
-                                    <ul>
-                                        <li><i class="lotus-icon-person"></i> Max: 2 Person(s)</li>
-                                        <li><i class="lotus-icon-bed"></i> Bed: King-size or twin beds</li>
-                                        <li><i class="lotus-icon-view"></i> View: Ocen</li>
-                                    </ul>
-
-                                    <a href="#" class="awe-btn awe-btn-default">VIEW DETAIL</a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-
-                        <!-- ITEM -->
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="room-compare_item">
-                                <div class="img">
-                                    <a href="#"><img src="images/room/detail/compare/img-1.jpg" alt=""></a>
-                                </div>
-
-                                <div class="text">
-                                    <h2><a href="">couple Room</a></h2>
-
-                                    <ul>
-                                        <li><i class="lotus-icon-person"></i> Max: 2 Person(s)</li>
-                                        <li><i class="lotus-icon-bed"></i> Bed: King-size or twin beds</li>
-                                        <li><i class="lotus-icon-view"></i> View: Ocen</li>
-                                    </ul>
-
-                                    <a href="#" class="awe-btn awe-btn-default">VIEW DETAIL</a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- END / ITEM -->
-                    </div>
-
-                </div>
-            </div>
-            <!-- END / COMPARE ACCOMMODATION -->
 
         </div>
     </section>

@@ -40,6 +40,10 @@ class HomeController extends Controller
     public static function get_review_avg($id){
         return Review::where('hotel_id',$id)->average('rate');
     }
+    public static function get_min_room_price($id){
+        return Room::where('hotel_id',$id)->min('price');
+
+    }
 
     public function index()
     {

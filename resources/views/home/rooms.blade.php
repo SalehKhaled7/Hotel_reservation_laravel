@@ -36,6 +36,7 @@
                         <h2>{{$hotel->title}} HOTEL</h2>
                         @php
                         $review_avg=\App\Http\Controllers\HomeController::get_review_avg($hotel->id);
+                        $min_room_price = \App\Http\Controllers\HomeController::get_min_room_price($hotel->id);
                         @endphp
 
                         <div>
@@ -49,9 +50,9 @@
                         </div>
 
 
-                        <span class="price">{{$hotel->star}}<span class="amout"> star  hotel </span></span>
+                        <span class="price"> <span style="color: #ff8503;font-size: 15px">{{$hotel->star}} star </span><span class="amout">  hotel </span></span>
 
-                        <span class="price">Start form <span class="amout">$120</span> per day</span>
+                        <span class="price">Start form <span class="amout" style="color: #000000;font-size: 20px"> {{$min_room_price}}$ </span> per day</span>
                         <span class="price">Phone: <span class="amout">{{$hotel->phone}}</span> </span>
                         <span class="price">Address: <span class="amout">{{$hotel->address}}</span> </span>
                         <p>{{$hotel->details}}</p>
@@ -77,7 +78,7 @@
                         <li><a href="#tabs-1">OVERVIEW </a></li>
                         <li><a href="#tabs-2">ROOMS </a></li>
                         <li><a href="#tabs-3">REVIEWS </a></li>
-                        <li><a href="#tabs-4">DRINK </a></li>
+                        <li><a href="#tabs-4">Other </a></li>
                     </ul>
 
                     <div id="tabs-1">
@@ -281,178 +282,21 @@
                                 <div class="col-md-6">
                                     <div class="restaurant_item small-thumbs">
 
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                            <span class="sales">-20%</span>
-                                        </div>
+
 
                                         <div class="text">
-                                            <h2><a href="#">roast &amp; vegetables</a></h2>
+                                            <h2><a href="#">Comming Soon</a></h2>
 
                                             <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
 
-                                            <p class="price">
-                                                <ins><span class="amout">$80</span></ins>
-                                                <del><span class="amout">$100</span></del>
-                                            </p>
+
                                         </div>
 
                                     </div>
                                 </div>
                                 <!-- END / ITEM -->
 
-                                <!-- ITEM -->
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
 
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">MEAT</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
-
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">meat soup</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
-
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">Pork Skewers Rotation</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
-
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">SPAGESTI</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
-
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">EGGS</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
-
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">Wildberry</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
-
-                                <!-- ITEM -->
-                                <div class="col-md-6">
-                                    <div class="restaurant_item small-thumbs">
-
-                                        <div class="img">
-                                            <a href="#"><img src="images/restaurants/img-1.jpg" alt=""></a>
-                                        </div>
-
-                                        <div class="text">
-                                            <h2><a href="#">Grilled Chicken</a></h2>
-
-                                            <p class="desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-
-                                            <p class="price">
-                                                <span class="amout">$60</span>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- END / ITEM -->
 
                             </div>
 
