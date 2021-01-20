@@ -3,6 +3,10 @@
 @section('title',$hotel->title.'-'.$room->title)
 @section('description',$setting->description)
 @section('keywords',$setting->keywords)
+@section('CSS')
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/hotel_picker/css/hotel-datepicker.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/hotel_picker/css/main.css">
+@endsection
 @section('content')
     <!-- SUB BANNER -->
     <section class="section-sub-banner" style="background-image:url('{{asset('assets')}}/images/hotels/{{$hotel->image}}')">
@@ -85,10 +89,21 @@
                             <div class="room-detail_form">
                                 <form action="{{route('add_reservation',['hotel_id'=>$hotel->id,'room_id'=>$room->id])}}" method="post">
                                 @csrf
-                                <label>Arrive</label>
-                                <input type="text" class="awe-calendar from" placeholder="Arrive Date" name="check_in" >
-                                <label>Depature</label>
-                                <input type="text" class="awe-calendar to" placeholder="Departure Date" name="check_out">
+                                    <h1 id="nights"></h1>
+                                <label>Check in - Check out</label>
+
+                                <div class="demo__input">
+                                    <input type="text" id="demo3"  value="" name="check_in_out" placeholder="check in - check out"
+                                           style="background-color: #fff;
+                                    border-width: 0;
+                                    height: 30px;
+                                    line-height: 30px;
+                                    width: 210px;
+                                    color: #898989;
+                                    font-weight: 500;">
+                                </div>
+
+
                                 <label>Adult</label>
                                 <select class="awe-select" name="adult">
                                     <option value="1" selected>1</option>
@@ -456,4 +471,28 @@
     </section>
     <!-- END / SHOP DETAIL -->
 
+@endsection
+@section('footerJs')
+    <script type="text/javascript" src="{{asset('assets')}}/hotel_picker/js/fecha.min.js"></script>
+    <script type="text/javascript" src="{{asset('assets')}}/hotel_picker/js/hotel-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+            // ------------------- DEMO 1 ------------------- //
+
+
+            var taken_days = {!! json_encode($arr) !!};
+            var demo3 = new HotelDatepicker(document.getElementById('demo3'), {
+                format: 'DD-MM-YYYY',
+                disabledDates: taken_days
+            });
+
+
+
+
+
+
+
+        })();
+    </script>
 @endsection

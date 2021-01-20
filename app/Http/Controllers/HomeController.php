@@ -13,6 +13,9 @@ use App\Models\Review;
 use App\Models\Room;
 use App\Models\Setting;
 use App\Models\User;
+use DateInterval;
+use DatePeriod;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -43,6 +46,15 @@ class HomeController extends Controller
     public static function get_min_room_price($id){
         return Room::where('hotel_id',$id)->min('price');
 
+    }
+
+    public static function stay_nights( string $in,string $out){
+
+        $date1 = new DateTime($in);
+        $date2 = new DateTime($out);
+        // this calculates the diff between two dates, which is the number of nights
+        $numberOfNights= $date2->diff($date1)->format("%a");
+        return $numberOfNights;
     }
 
     public function index()
@@ -136,11 +148,28 @@ class HomeController extends Controller
         $room=Room::find($room_id);
         $hotel=Hotel::find($hotel_id);
         $setting=Setting::first();
+        $reservations = Reservation::where('room_id',$room_id)->get();
+        $arr=[];
+        foreach ($reservations as $res){
+            $begin = new DateTime($res->check_in);
+            $end = new DateTime($res->check_out);
+
+            $interval = DateInterval::createFromDateString('1 day');
+            $period = new DatePeriod($begin, $interval, $end);
+
+            foreach ($period as $dt) {
+                array_push($arr,$dt->format("Y-m-d"));
+            }
+        }
+
+
+
         $context = [
             'room'=>$room,
             'setting'=>$setting,
             'hotel'=>$hotel,
-            'image_list'=>$image_list
+            'image_list'=>$image_list,
+            'arr'=>$arr
 
         ];
         return view('home.room_detail',$context);
@@ -193,19 +222,21 @@ class HomeController extends Controller
         $data->room_id = $room_id;
         $data->hotel_id = $hotel_id;
 
-        $check_in =$request->input('check_in');
-        $month =substr($check_in,0,2);
-        $day =substr($check_in,3,2);
-        $year =substr($check_in,6,4);
+        $check_in_out =$request->input('check_in_out');
+        #check in
+        $year_in =substr($check_in_out,6,4);
+        $month_in =substr($check_in_out,3,2);
+        $day_in =substr($check_in_out,0,2);
+        $data->check_in = $year_in.'-'.$month_in.'-'.$day_in;
+        $in = $year_in.'-'.$month_in.'-'.$day_in;
 
-        $data->check_in = $year.'-'.$month.'-'.$day;
+        #check out
+        $year_out =substr($check_in_out,19,4);
+        $month_out =substr($check_in_out,16,2);
+        $day_out =substr($check_in_out,13,2);
+        $data->check_out = $year_out.'-'.$month_out.'-'.$day_out;
+        $out = $year_out.'-'.$month_out.'-'.$day_out;
 
-        $check_out = $request->input('check_out');
-        $month =substr($check_out,0,2);
-        $day =substr($check_out,3,2);
-        $year =substr($check_out,6,4);
-
-        $data->check_out = $year.'-'.$month.'-'.$day;
 
         $data->adult = $request->input('adult');
         $data->child = $request->input('child');
@@ -213,6 +244,8 @@ class HomeController extends Controller
         return back()->with('success','Reservation done successfully . ');
 
     }
+
+
 
     #admin login
     public function login(){ // return dashboard > login page

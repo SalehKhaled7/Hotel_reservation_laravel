@@ -8,6 +8,7 @@
 @endsection
 @section('content_user')
 
+
     <!-- RATES -->
     <div  >
 
@@ -20,12 +21,17 @@
                     <th>Room id</th>
                     <th>Check in</th>
                     <th>Check out</th>
+                    <th>Total Nights</th>
                     <th>Adult</th>
                     <th>child</th>
+                    <th>Total Price</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 @foreach($reservations as $rs)
+                    @php
+                        $nights = \App\Http\Controllers\HomeController::stay_nights( $rs->check_in,$rs->check_out );
+                    @endphp
                     <tr>
                         <td>
                             <h6>{{$rs->hotel->title}}</h6>
@@ -40,10 +46,16 @@
                             <p class="price"><span class="amout">{{$rs->check_out}}</span></p>
                         </td>
                         <td>
+                            <p class="price"><span class="amout">{{$nights}}</span></p>
+                        </td>
+                        <td>
                             <p class="price"><span class="amout">{{$rs->adult}}</span></p>
                         </td>
                         <td>
                             <p class="price"><span class="amout">{{$rs->child}}</span></p>
+                        </td>
+                        <td>
+                            <p class="price"><span class="amout">{{ number_format($nights * $rs->room->price)}}</span></p>
                         </td>
                         <td>
                             <p class="price">
