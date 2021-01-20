@@ -18,4 +18,8 @@ class Room extends Model
     public function images(){
         return $this->hasMany(Image::class);
     }
+    //evey room has many images
+    public function reservations(){
+        return $this->hasMany(Reservation::class);
+    }
 }
