@@ -190,17 +190,48 @@ class HomeController extends Controller
 
     public function find_hotel(Request $request){
         $city =$request->input('city');
-        $check_in= $request->input('check_in');
-        $check_out= $request->input('check_out');
-        $people= $request->input('people');
 
-        $available_hotels=Hotel::where('city',$city)->get();
+        $data_in= $request->input('check_in');
+        $year_in =substr($data_in,6,4);
+        $day_in =substr($data_in,3,2);
+        $month_in =substr($data_in,0,2);
+        $check_in =$year_in.'-'.$month_in.'-'.$day_in;
+
+        $data_out= $request->input('check_out');
+        $year_out =substr($data_out,6,4);
+        $day_out =substr($data_out,3,2);
+        $month_out=substr($data_out,0,2);
+        $check_out =$year_out.'-'.$month_out.'-'.$day_out;
+        $people= $request->input('people');
+        $hotel_list = Hotel::with('rooms')->where('city',$city)->get();
+        $rooms = Room::whereNotIn('id', function($query) use ($check_in, $check_out) {
+            $query->from('reservations')
+                ->select('room_id')->where(function ($q) use ($check_out, $check_in) {
+                    $q->where('check_in', '<', $check_in)
+                        ->where('check_out', '>', $check_out);
+                })->orWhere(function ($p) use ($check_out, $check_in) {
+                    $p->where('check_in', '>=', $check_in)
+                        ->where('check_out', '<=', $check_out);
+                })->orWhere(function ($d) use ($check_out) {
+                    $d->where('check_in', '<', $check_out)
+                        ->where('check_out', '>', $check_out);
+                })->orWhere(function ($s) use ( $check_in) {
+                    $s->where('check_in', '<', $check_in)
+                        ->where('check_out', '>', $check_in);
+                });
+
+        })->get();
+        //$available_rooms=Hotel::with('rooms')->where('city',$city)->room;
+       // print_r($check_in);
+       //exit();
+        //dd($rooms);
         $setting=Setting::first();
         $data = [
-            'hotel_list'=>$available_hotels,
             'setting'=>$setting,
+            'hotel_list'=>$hotel_list,
+            'rooms'=>$rooms,
         ];
-        return view('home.hotels',$data);
+        return view('home.rooms_search',$data);
     }
 
     public function add_review(Request $request , $id){
@@ -230,13 +261,13 @@ class HomeController extends Controller
         $data->check_in = $year_in.'-'.$month_in.'-'.$day_in;
         $in = $year_in.'-'.$month_in.'-'.$day_in;
 
+
         #check out
         $year_out =substr($check_in_out,19,4);
         $month_out =substr($check_in_out,16,2);
         $day_out =substr($check_in_out,13,2);
         $data->check_out = $year_out.'-'.$month_out.'-'.$day_out;
         $out = $year_out.'-'.$month_out.'-'.$day_out;
-
 
         $data->adult = $request->input('adult');
         $data->child = $request->input('child');
