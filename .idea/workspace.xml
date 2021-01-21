@@ -10,12 +10,53 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="rooms no longer can be reserved in already taken dates">
-      <change afterPath="$PROJECT_DIR$/public/assets/images/hotels/Veritatis consectetu/NO-0/1611172255.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/hotels/Veritatis consectetu/NO-0/1611172260.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/rooms_search.blade.php" afterDir="false" />
+
+    <list default="true" id="70e97b46-ec3a-4337-9c0b-bd8a8a0aa572" name="Default Changelist" comment="User Role management">
+      <change afterPath="$PROJECT_DIR$/public/assets/css/hotel-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/demo/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/demo/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/dist/css/hotel-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/dist/js/hotel-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/dist/js/hotel-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/js/hotel-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/sass/_base.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/sass/_colors.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/sass/_mq.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/sass/_theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/sass/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel-datepicker-4.0.0/src/sass/hotel-datepicker.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel_picker/css/New Text Document.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel_picker/css/hotel-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel_picker/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel_picker/js/New Text Document.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel_picker/js/fecha.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/hotel_picker/js/hotel-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/hotels/Dolor ratione in qua/Iste delectus nulla/1611167791.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/hotels/Ipsum culpa Nam of/NO-14/1611169284.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/images/hotels/Ipsum culpa Nam of/NO-14/1611169300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/hotel-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/index2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/room_detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user/user_reservations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user/user_reservations.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +246,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home\user" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\layouts" />
+    </key>
+
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Laravel\project2\resources\views\home" />
       <recent name="C:\xampp\htdocs\Laravel\project2\storage\app\public" />
@@ -281,8 +330,10 @@
       <workItem from="1611062916336" duration="1600000" />
       <workItem from="1611069290933" duration="4067000" />
       <workItem from="1611151382233" duration="8000" />
+
       <workItem from="1611152586059" duration="20004000" />
       <workItem from="1611186529243" duration="8607000" />
+
     </task>
     <task id="LOCAL-00001" summary="integrating bootstrap template into laravel project">
       <created>1606471571832</created>
@@ -578,6 +629,7 @@
       <option name="project" value="LOCAL" />
       <updated>1610984688696</updated>
     </task>
+
     <task id="LOCAL-00043" summary="rooms no longer can be reserved in already taken dates">
       <created>1611171984600</created>
       <option name="number" value="00043" />
@@ -586,6 +638,7 @@
       <updated>1611171984600</updated>
     </task>
     <option name="localTasksCounter" value="44" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,6 +661,9 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+
+    <MESSAGE value="fix category&lt;-&gt;model relationship" />
+
     <MESSAGE value="admin navigations now have active effect" />
     <MESSAGE value="nested relationships ,category &lt;-&gt; subcategories" />
     <MESSAGE value="Home page setting meta tags" />
@@ -632,8 +688,9 @@
     <MESSAGE value="user roles added , normal users can't reach admin panel anymore" />
     <MESSAGE value="User Role management" />
     <MESSAGE value="some css adjustments , fixing footer links" />
-    <MESSAGE value="rooms no longer can be reserved in already taken dates" />
-    <option name="LAST_COMMIT_MESSAGE" value="rooms no longer can be reserved in already taken dates" />
+
+    <option name="LAST_COMMIT_MESSAGE" value="some css adjustments , fixing footer links" />
+
   </component>
   <component name="WindowStateProjectService">
     <state x="336" y="361" key="#SQL_Dialects" timestamp="1608927306824">
@@ -688,10 +745,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606905006129" />
+
     <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1611171986060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611171986060" />
+
     <state x="540" y="174" key="com.intellij.database.dbimport.ImportDialog" timestamp="1610125673960">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

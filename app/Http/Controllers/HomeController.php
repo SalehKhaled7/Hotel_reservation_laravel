@@ -261,13 +261,13 @@ class HomeController extends Controller
         $data->check_in = $year_in.'-'.$month_in.'-'.$day_in;
         $in = $year_in.'-'.$month_in.'-'.$day_in;
 
+
         #check out
         $year_out =substr($check_in_out,19,4);
         $month_out =substr($check_in_out,16,2);
         $day_out =substr($check_in_out,13,2);
         $data->check_out = $year_out.'-'.$month_out.'-'.$day_out;
         $out = $year_out.'-'.$month_out.'-'.$day_out;
-
 
         $data->adult = $request->input('adult');
         $data->child = $request->input('child');
